@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  structuredData?: object | object[];
+}
+
+const {
+  title,
+  description,
+  keywords,
+  canonical,
+  ogImage = 'https://tdh.ir/og-image.jpg',
+  ogType = 'website',
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = 'https://tdh.ir';
+const fullTitle = title.includes('TDH') ? title : `${title} | TDH`;
+const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+
+const structuredDataArray = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : [];
+---
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Primary Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content="TDH - Takin Data Hooshmand" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={fullUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="TDH" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullUrl} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:site" content="@TDH" />
+    <meta name="twitter:creator" content="@TDH" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0052CC" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://tdh.ir" />
+
+    <!-- Structured Data -->
+    {structuredDataArray.map((data) => (
+      <script type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))}
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col" dir="rtl">
+      <Navbar client:load />
+      <div class="flex-1">
+        <slot />
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>

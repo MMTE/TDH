@@ -1,0 +1,87 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { SolutionDetailContent } from '@/components/pages/SolutionDetailContent';
+import { getSolutionBySlug, getAllSolutionSlugs } from '@/lib/solutions';
+import { createBreadcrumbStructuredData } from '@/lib/seo';
+
+export async function getStaticPaths() {
+  const slugs = getAllSolutionSlugs();
+  return slugs.map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const solution = getSolutionBySlug(slug || '');
+
+if (!solution) {
+  return Astro.redirect('/404');
+}
+
+const breadcrumbData = createBreadcrumbStructuredData([
+  { name: 'خانه', url: '/' },
+  { name: 'راهکارها و خدمات', url: '/solutions' },
+  { name: solution.title, url: `/solutions/${slug}` },
+]);
+
+const serviceStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: solution.title,
+  description: solution.fullText,
+  serviceType: solution.tagline,
+  provider: {
+    '@type': 'Organization',
+    name: 'TDH',
+  },
+  ...(solution.features && solution.features.length > 0 && {
+    offers: {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: solution.title,
+        description: solution.fullText,
+      },
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Iran',
+    },
+  }),
+  ...(solution.pricing && {
+    offers: {
+      '@type': 'Offer',
+      price: solution.pricing,
+      priceCurrency: 'IRR',
+      availability: 'https://schema.org/InStock',
+    },
+  }),
+};
+
+// Add FAQ structured data if problems solved exist
+const faqStructuredData = solution.problemsSolved && solution.problemsSolved.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: solution.problemsSolved.map((problem) => ({
+    '@type': 'Question',
+    name: `آیا ${solution.title} مشکل "${problem}" را حل می‌کند؟`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: `بله، ${solution.title} این مشکل را با ${solution.tagline} حل می‌کند.`,
+    },
+  })),
+} : null;
+
+const structuredData = [breadcrumbData, serviceStructuredData, ...(faqStructuredData ? [faqStructuredData] : [])];
+---
+
+<Layout
+  title={`${solution.title} - ${solution.tagline} | TDH`}
+  description={solution.fullText}
+  keywords={`${solution.title}, ${solution.tagline}, TDH, راهکارهای فنی, خدمات IT, ${solution.title} ایران${solution.technologies ? `, ${solution.technologies.join(', ')}` : ''}`}
+  canonical={`/solutions/${slug}`}
+  structuredData={structuredData}
+>
+  <SolutionDetailContent solution={solution} client:idle />
+</Layout>
+

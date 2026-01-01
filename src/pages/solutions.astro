@@ -1,0 +1,34 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { SolutionsContent } from '@/components/pages/SolutionsContent';
+import { createBreadcrumbStructuredData } from '@/lib/seo';
+import { solutions } from '@/lib/solutions';
+
+const breadcrumbData = createBreadcrumbStructuredData([
+  { name: 'خانه', url: '/' },
+  { name: 'راهکارها و خدمات', url: '/solutions' },
+]);
+
+const servicesStructuredData = solutions.map((solution) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: solution.title,
+  description: solution.shortText,
+  provider: {
+    '@type': 'Organization',
+    name: 'TDH',
+  },
+}));
+
+const structuredData = [breadcrumbData, ...servicesStructuredData];
+---
+
+<Layout
+  title="راهکارها و خدمات TDH - توسعه سفارشی، زیرساخت ابری، DevOps | خدمات فنی"
+  description="خدمات فنی TDH: توسعه نرم‌افزار سفارشی، زیرساخت ابری و هاستینگ با ۹۹.۹٪ آپتایم، فرآیند DevOps و CI/CD، یکپارچه‌سازی API و مشاوره فنی. راهکارهای کامل برای تحول دیجیتال کسب‌وکار شما."
+  keywords="خدمات TDH, توسعه نرم‌افزار سفارشی, زیرساخت ابری, هاستینگ, DevOps, CI/CD, یکپارچه‌سازی API, مشاوره فنی, تحول دیجیتال, خدمات فناوری اطلاعات ایران"
+  canonical="/solutions"
+  structuredData={structuredData}
+>
+  <SolutionsContent client:idle />
+</Layout>

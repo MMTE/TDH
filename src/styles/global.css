@@ -1,0 +1,400 @@
+@import "tailwindcss";
+
+/* IRANSansXFaNum Font Faces */
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 100;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-Thin.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 200;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-UltraLight.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-UltraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-Light.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-Regular.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-Medium.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-DemiBold.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-DemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-Bold.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-ExtraBold.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: IRANSansXFaNum;
+  font-style: normal;
+  font-weight: 900;
+  src: url('/fonts/IRANSans/Woff2/IRANSansXFaNum-Black.woff2') format('woff2'),
+    url('/fonts/IRANSans/Woff/IRANSansXFaNum-Black.woff') format('woff');
+}
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Colors - TDH Industrial Palette */
+  --color-background: hsl(220 14% 96%);
+  --color-foreground: hsl(216 10% 24%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(216 10% 24%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(216 10% 24%);
+  --color-primary: hsl(216 10% 24%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(216 10% 58%);
+  --color-secondary-foreground: hsl(0 0% 100%);
+  --color-accent: hsl(214 100% 40%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-muted: hsl(220 14% 90%);
+  --color-muted-foreground: hsl(216 10% 45%);
+  --color-destructive: hsl(14 100% 45%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-success: hsl(158 100% 27%);
+  --color-warning: hsl(32 100% 50%);
+  --color-border: hsl(216 10% 58% / 0.2);
+  --color-input: hsl(216 10% 58% / 0.3);
+  --color-ring: hsl(214 100% 40%);
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+
+  /* Fonts */
+  --font-heading: 'IRANSansXFaNum', sans-serif;
+  --font-body: 'IRANSansXFaNum', sans-serif;
+  --font-mono: 'IRANSansXFaNum', monospace;
+
+  /* Type Scale */
+  --text-hero: 3.815rem;
+  --text-h1: 2.441rem;
+  --text-h2: 1.953rem;
+  --text-h3: 1.563rem;
+  --text-body: 1rem;
+  --text-small: 0.8rem;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+
+  /* Animations - Only essential accordion animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    background-position: -100% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Base Styles */
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Industrial Image Treatment */
+.industrial-image {
+  filter: grayscale(60%) contrast(1.1) brightness(0.95);
+}
+
+.industrial-image:hover {
+  filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+/* Data Stream Animation for Cards */
+.data-stream-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  background-size: 200% 100%;
+  transition: opacity 0.3s ease;
+}
+
+.data-stream-card:hover::before {
+  opacity: 1;
+  animation: data-flow 1.5s linear infinite;
+}
+
+/* Text utilities for type scale */
+.text-hero {
+  font-size: var(--text-hero);
+  line-height: 1.1;
+}
+
+.text-h1 {
+  font-size: var(--text-h1);
+  line-height: 1.2;
+}
+
+.text-h2 {
+  font-size: var(--text-h2);
+  line-height: 1.3;
+}
+
+.text-h3 {
+  font-size: var(--text-h3);
+  line-height: 1.4;
+}
+
+/* Letter spacing for industrial feel */
+.tracking-industrial {
+  letter-spacing: 0.02em;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 1440px;
+}
+
+/* Custom utility classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Background colors */
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.bg-foreground {
+  background-color: var(--color-foreground);
+}
+
+.bg-card {
+  background-color: var(--color-card);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-foreground {
+  background-color: var(--color-primary-foreground);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-muted {
+  background-color: var(--color-muted);
+}
+
+.bg-destructive {
+  background-color: var(--color-destructive);
+}
+
+/* Text colors */
+.text-foreground {
+  color: var(--color-foreground);
+}
+
+.text-background {
+  color: var(--color-background);
+}
+
+.text-card-foreground {
+  color: var(--color-card-foreground);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-foreground {
+  color: var(--color-primary-foreground);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-secondary-foreground {
+  color: var(--color-secondary-foreground);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-accent-foreground {
+  color: var(--color-accent-foreground);
+}
+
+.text-muted-foreground {
+  color: var(--color-muted-foreground);
+}
+
+.text-destructive {
+  color: var(--color-destructive);
+}
+
+/* Border colors */
+.border-border {
+  border-color: var(--color-border);
+}
+
+.border-accent {
+  border-color: var(--color-accent);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+/* Ring */
+.ring-ring {
+  --tw-ring-color: var(--color-ring);
+}
+
+/* Border radius */
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+/* Height */
+.h-18 {
+  height: var(--spacing-18);
+}
+
+.h-22 {
+  height: var(--spacing-22);
+}
+
+/* Top */
+.top-18 {
+  top: var(--spacing-18);
+}
+
+/* Divide */
+.divide-x-reverse> :not([hidden])~ :not([hidden]) {
+  --tw-divide-x-reverse: 1;
+}

@@ -1,0 +1,60 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { ProductDetailContent } from '@/components/pages/ProductDetailContent';
+import { getProductBySlug, getAllProductSlugs } from '@/lib/products';
+import { createBreadcrumbStructuredData, createProductStructuredData } from '@/lib/seo';
+
+export async function getStaticPaths() {
+  const slugs = getAllProductSlugs();
+  return slugs.map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const product = getProductBySlug(slug || '');
+
+if (!product) {
+  return Astro.redirect('/404');
+}
+
+const breadcrumbData = createBreadcrumbStructuredData([
+  { name: 'خانه', url: '/' },
+  { name: 'محصولات', url: '/products' },
+  { name: product.name, url: `/products/${slug}` },
+]);
+
+const productStructuredData = createProductStructuredData(
+  product.name,
+  product.fullDescription,
+  product.image,
+  product.pricing
+);
+
+// Add FAQ structured data if problems solved exist
+const faqStructuredData = product.problemsSolved && product.problemsSolved.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: product.problemsSolved.map((problem) => ({
+    '@type': 'Question',
+    name: `آیا ${product.name} مشکل "${problem}" را حل می‌کند؟`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: `بله، ${product.name} این مشکل را با ${product.tagline} حل می‌کند.`,
+    },
+  })),
+} : null;
+
+const structuredData = [breadcrumbData, productStructuredData, ...(faqStructuredData ? [faqStructuredData] : [])];
+---
+
+<Layout
+  title={`${product.name} - ${product.tagline} | TDH`}
+  description={product.fullDescription}
+  keywords={`${product.name}, ${product.tagline}, TDH, نرم‌افزار سازمانی, ${product.name} ایران${product.technologies ? `, ${product.technologies.join(', ')}` : ''}`}
+  canonical={`/products/${slug}`}
+  structuredData={structuredData}
+>
+  <ProductDetailContent product={product} client:idle />
+</Layout>
+

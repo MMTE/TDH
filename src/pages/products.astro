@@ -1,0 +1,27 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { ProductsContent } from '@/components/pages/ProductsContent';
+import { createBreadcrumbStructuredData, createProductStructuredData } from '@/lib/seo';
+import { products } from '@/lib/products';
+
+const breadcrumbData = createBreadcrumbStructuredData([
+  { name: 'خانه', url: '/' },
+  { name: 'محصولات', url: '/products' },
+]);
+
+const productsStructuredData = products.map((product) =>
+  createProductStructuredData(product.name, product.shortDescription, product.image, product.pricing)
+);
+
+const structuredData = [breadcrumbData, ...productsStructuredData];
+---
+
+<Layout
+  title="محصولات TDH - ERP، CRM، هوش تجاری و اتوماسیون فرآیند | نرم‌افزار سازمانی"
+  description="محصولات سازمانی TDH: مجموعه کسب‌وکار (ERP/CRM) برای مدیریت یکپارچه، پلتفرم داده (BI) برای تحلیل پیشرفته، و گردش‌کار برای اتوماسیون. مناسب برای شرکت‌های تولیدی، بازرگانی و خدماتی. درخواست دمو رایگان."
+  keywords="محصولات TDH, ERP سازمانی, سیستم CRM, پلتفرم داده, هوش تجاری, BI, گردش‌کار سازمانی, اتوماسیون فرآیند, نرم‌افزار سازمانی, ERP ایرانی, CRM ایرانی, پلتفرم BI ایران, نرم‌افزار ERP برای شرکت‌های کوچک"
+  canonical="/products"
+  structuredData={structuredData}
+>
+  <ProductsContent client:load />
+</Layout>

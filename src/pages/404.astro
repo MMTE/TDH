@@ -1,0 +1,46 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+
+const pathname = Astro.url.pathname;
+---
+
+<Layout
+  title="صفحه پیدا نشد - 404"
+  description="صفحه مورد نظر شما یافت نشد. به صفحه اصلی بازگردید."
+  canonical={pathname}
+  noindex={true}
+>
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="container px-6 text-center">
+      <div class="max-w-lg mx-auto">
+        <!-- 404 Display -->
+        <div class="mb-8">
+          <span class="text-8xl md:text-9xl font-heading font-bold text-muted-foreground/20">
+            ۴۰۴
+          </span>
+        </div>
+
+        <h1 class="text-h2 font-heading font-bold text-foreground mb-4">
+          صفحه پیدا نشد
+        </h1>
+
+        <p class="text-muted-foreground mb-8 text-sm">
+          // خطا: مسیر درخواستی وجود ندارد
+          <br />
+          // مسیر: {pathname}
+        </p>
+
+        <a href="/" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 uppercase tracking-[0.08em] bg-primary text-primary-foreground border-2 border-transparent rounded-sm hover:border-accent hover:-translate-y-0.5 active:translate-y-0 h-11 px-8 py-3 group">
+          <ArrowRight
+            size={16}
+            strokeWidth={1.5}
+            className="transition-transform group-hover:translate-x-1"
+          />
+          بازگشت به خانه
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

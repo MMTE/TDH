@@ -1,0 +1,53 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { FAQContent } from '@/components/pages/FAQContent';
+import { createBreadcrumbStructuredData } from '@/lib/seo';
+
+const breadcrumbData = createBreadcrumbStructuredData([
+  { name: 'خانه', url: '/' },
+  { name: 'سوالات متداول', url: '/faq' },
+]);
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'مجموعه کسب‌وکار TDH چه تفاوتی با سایر سیستم‌های ERP دارد؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'مجموعه کسب‌وکار TDH یک پلتفرم یکپارچه است که ERP، CRM، مدیریت پروژه و ابزارهای مالی را در یک سیستم واحد گرد هم می‌آورد. برخلاف سیستم‌های سنتی که نیاز به یکپارچه‌سازی پیچیده دارند، TDH از ابتدا به‌صورت یکپارچه طراحی شده است.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'نحوه قیمت‌گذاری محصولات TDH چگونه است؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'قیمت‌گذاری محصولات TDH بر اساس تعداد کاربران و پلن انتخابی شما تعیین می‌شود. مجموعه کسب‌وکار TDH از ۴۹۰,۰۰۰ تومان به ازای هر کاربر در ماه شروع می‌شود.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'زمان پیاده‌سازی محصولات TDH چقدر است؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'برای پیاده‌سازی استاندارد مجموعه کسب‌وکار TDH، معمولاً ۲ تا ۴ هفته زمان نیاز است. پلتفرم داده TDH و گردش‌کار TDH معمولاً در ۱ تا ۲ هفته پیاده‌سازی می‌شوند.',
+      },
+    },
+  ],
+};
+
+const structuredData = [breadcrumbData, faqStructuredData];
+---
+
+<Layout
+  title="سوالات متداول TDH - FAQ | پاسخ به سوالات درباره محصولات و خدمات"
+  description="پاسخ به سوالات متداول درباره محصولات TDH (ERP، CRM، هوش تجاری)، قیمت‌گذاری، پیاده‌سازی، پشتیبانی و امنیت. اگر سوالی دارید، اینجا پاسخ آن را پیدا کنید."
+  keywords="سوالات متداول TDH, FAQ TDH, سوالات درباره ERP, سوالات درباره CRM, قیمت نرم‌افزار سازمانی, پشتیبانی TDH, امنیت داده"
+  canonical="/faq"
+  structuredData={structuredData}
+>
+  <FAQContent client:idle />
+</Layout>
