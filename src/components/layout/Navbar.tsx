@@ -1,123 +1,243 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
-export function Navbar() {
+interface NavbarProps {
+  activePath?: string;
+}
+
+const navLinks = [
+  { href: '/', label: 'خانه' },
+  { href: '/products', label: 'محصولات' },
+  { href: '/solutions', label: 'راهکارها' },
+  { href: '/about', label: 'درباره ما' },
+  { href: '/faq', label: 'سوالات متداول' },
+  { href: '/contact', label: 'تماس با ما' },
+];
+
+export function Navbar({ activePath }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState(activePath || '/');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentPath, setCurrentPath] = useState('/');
 
   useEffect(() => {
-    // Get current path on client
     setCurrentPath(window.location.pathname);
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '/', label: 'خانه' },
-    { href: '/products', label: 'محصولات' },
-    { href: '/solutions', label: 'راهکارها' },
-    { href: '/about', label: 'درباره ما' },
-    { href: '/faq', label: 'سوالات متداول' },
-    { href: '/contact', label: 'تماس با ما' },
-  ];
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
   return (
-    <nav
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-sm border-b border-border'
-          : 'bg-transparent'
-      )}
-    >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-18">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <img
-              src="/images/logo-transparent.png"
-              alt="TDH"
-              className="h-12 w-auto"
-            />
-            <span className="text-xl font-heading font-bold text-primary">
-              تکین داده هوشمند
-            </span>
+    <>
+      <nav
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 10,
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          background: isScrolled
+            ? 'color-mix(in oklch, var(--color-bg) 85%, transparent)'
+            : 'color-mix(in oklch, var(--color-bg) 60%, transparent)',
+          borderBottom: '1px solid var(--color-line)',
+          transition: 'background 0.3s ease',
+        }}
+      >
+        <div
+          className="mx-auto flex items-center justify-between"
+          style={{ maxWidth: 1400, padding: '20px 40px' }}
+        >
+          <a href="/" className="flex items-center gap-3" dir="rtl">
+            <div
+              style={{
+                width: 36,
+                height: 36,
+                background: 'var(--color-accent)',
+                display: 'grid',
+                placeItems: 'center',
+                flexShrink: 0,
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: 900,
+                  fontSize: 18,
+                  color: 'var(--color-bg)',
+                  lineHeight: 1,
+                }}
+              >
+                T
+              </span>
+            </div>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-fg font-bold text-[15px] leading-tight">
+                تکین داده هوشمند
+              </span>
+              <span
+                className="text-accent"
+                style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.05em', direction: 'ltr', display: 'inline-block' }}
+              >
+                TDH · ENTERPRISE OS
+              </span>
+            </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <div className="hidden lg:flex items-center gap-6">
+            {navLinks.map((link) => {
+              const isActive = currentPath === link.href;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  style={{
+                    fontSize: 14,
+                    fontWeight: isActive ? 600 : 400,
+                    color: isActive ? 'var(--color-fg)' : 'var(--color-fg-muted)',
+                    borderBottom: isActive ? '2px solid var(--color-accent)' : '2px solid transparent',
+                    paddingBottom: 4,
+                    transition: 'color 0.2s ease, border-color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) e.currentTarget.style.color = 'var(--color-fg)';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) e.currentTarget.style.color = 'var(--color-fg-muted)';
+                  }}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
+            <a
+              href="/contact"
+              style={{
+                background: 'var(--color-accent)',
+                color: 'var(--color-bg)',
+                fontWeight: 600,
+                fontSize: 14,
+                padding: '10px 20px',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              درخواست دمو ←
+            </a>
+          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2"
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--color-fg)',
+              cursor: 'pointer',
+              padding: 8,
+            }}
+            aria-label="منوی موبایل"
+          >
+            {isOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="8" x2="20" y2="8" />
+                <line x1="4" y1="16" x2="20" y2="16" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            top: 0,
+            zIndex: 20,
+            background: 'var(--color-bg)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 32,
+            direction: 'rtl',
+          }}
+        >
+          <button
+            onClick={() => setIsOpen(false)}
+            style={{
+              position: 'absolute',
+              top: 20,
+              left: 20,
+              background: 'none',
+              border: 'none',
+              color: 'var(--color-fg)',
+              cursor: 'pointer',
+              padding: 8,
+            }}
+            aria-label="بستن منو"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+
+          {navLinks.map((link) => {
+            const isActive = currentPath === link.href;
+            return (
               <a
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  'text-sm font-medium transition-colors',
-                  currentPath === link.href
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-primary'
-                )}
+                onClick={() => setIsOpen(false)}
+                style={{
+                  fontSize: 20,
+                  fontWeight: isActive ? 600 : 400,
+                  color: isActive ? 'var(--color-fg)' : 'var(--color-fg-muted)',
+                  textDecoration: 'none',
+                }}
               >
                 {link.label}
               </a>
-            ))}
-          </div>
+            );
+          })}
 
-          {/* Right Side - CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button asChild variant="hero" size="sm">
-              <a href="tel:02128428084">تماس با ما</a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-primary"
-            aria-label="منوی موبایل"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          'lg:hidden fixed inset-x-0 top-18 bg-background border-b border-border transition-all duration-200 overflow-hidden',
-          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        )}
-      >
-        <div className="container mx-auto px-6 py-6 space-y-4">
-          {navLinks.map((link) => (
+          <div className="flex items-center gap-4 mt-4">
+            <ThemeToggle />
             <a
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'block text-lg font-medium transition-colors py-2',
-                currentPath === link.href
-                  ? 'text-primary'
-                  : 'text-muted-foreground'
-              )}
+              href="/contact"
               onClick={() => setIsOpen(false)}
+              style={{
+                background: 'var(--color-accent)',
+                color: 'var(--color-bg)',
+                fontWeight: 600,
+                fontSize: 16,
+                padding: '12px 24px',
+                textDecoration: 'none',
+              }}
             >
-              {link.label}
+              درخواست دمو ←
             </a>
-          ))}
-
-          <div className="flex items-center gap-4 pt-4 border-t border-border">
-            <Button asChild variant="hero" size="sm" className="flex-1">
-              <a href="tel:02128428084">تماس با ما</a>
-            </Button>
           </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 }

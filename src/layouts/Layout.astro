@@ -25,6 +25,7 @@ const {
   structuredData,
 } = Astro.props;
 
+const currentPath = Astro.url.pathname;
 const siteUrl = 'https://tdh.ir';
 const fullTitle = title.includes('TDH') ? title : `${title} | TDH`;
 const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
@@ -99,7 +100,7 @@ const structuredDataArray = structuredData
   </head>
   <body>
     <div class="bg-bg text-fg min-h-screen flex flex-col" dir="rtl">
-      <Navbar client:load />
+      <Navbar client:load activePath={currentPath} />
       <div class="flex-1">
         <slot />
       </div>

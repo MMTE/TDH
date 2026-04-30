@@ -1,145 +1,137 @@
-import { Linkedin, Instagram, Send } from 'lucide-react';
-
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6 py-16">
-        {/* 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
+    <footer
+      style={{
+        background: 'var(--color-bg)',
+        borderTop: '1px solid var(--color-line)',
+        direction: 'rtl',
+      }}
+    >
+      <div
+        className="mx-auto"
+        style={{ maxWidth: 1400, padding: '80px 40px 32px' }}
+      >
+        <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr_1.4fr]">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img
-                src="/images/logo-transparent-white.png"
-                alt="TDH"
-                className="h-12 w-auto"
-              />
-              <span className="text-xl font-heading font-bold">
+            <div className="flex items-center gap-3 mb-4">
+              <div
+                style={{
+                  width: 36,
+                  height: 36,
+                  background: 'var(--color-accent)',
+                  display: 'grid',
+                  placeItems: 'center',
+                  flexShrink: 0,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontWeight: 900,
+                    fontSize: 18,
+                    color: 'var(--color-bg)',
+                    lineHeight: 1,
+                  }}
+                >
+                  T
+                </span>
+              </div>
+              <span className="text-fg font-bold text-[15px]">
                 تکین داده هوشمند
               </span>
             </div>
-            <p className="text-sm text-primary-foreground/70 mb-2">
-              راهکارهای نرم‌افزاری سازمانی
-            </p>
-            <p className="text-xs text-primary-foreground/50">
-              فناوری | نوآوری | نرم‌افزار
+            <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.8, maxWidth: 320 }}>
+              راهکارهای نرم‌افزاری سازمانی برای کسب‌وکارهای در حال رشد. فناوری · نوآوری · نرم‌افزار.
             </p>
           </div>
 
-          {/* Products */}
           <div>
-            <h4 className="text-sm font-heading font-bold mb-4">
-              محصولات
+            <h4
+              className="mb-4 text-fg"
+              style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              PRODUCTS
             </h4>
-            <nav className="flex flex-col gap-2">
-              <a
-                href="/products"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                مجموعه کسب‌وکار TDH
+            <nav className="flex flex-col gap-3">
+              <a href="/products/business-suite" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                مجموعه کسب‌وکار
               </a>
-              <a
-                href="/products"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                پلتفرم داده TDH
+              <a href="/products/data-platform" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                پلتفرم داده
               </a>
-              <a
-                href="/products"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                گردش‌کار TDH
+              <a href="/products/workflow" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                گردش‌کار
               </a>
             </nav>
           </div>
 
-          {/* Solutions */}
           <div>
-            <h4 className="text-sm font-heading font-bold mb-4">
-              راهکارها
+            <h4
+              className="mb-4 text-fg"
+              style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              COMPANY
             </h4>
-            <nav className="flex flex-col gap-2">
-              <a
-                href="/solutions"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                زیرساخت ابری و هاستینگ
-              </a>
-              <a
-                href="/solutions"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                توسعه نرم‌افزار سفارشی
-              </a>
-              <a
-                href="/about"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
+            <nav className="flex flex-col gap-3">
+              <a href="/about" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
                 درباره ما
               </a>
-              <a
-                href="/faq"
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
+              <a href="/solutions" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                راهکارها
+              </a>
+              <a href="/faq" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
                 سوالات متداول
+              </a>
+              <a href="/contact" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                تماس
               </a>
             </nav>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="text-sm font-heading font-bold mb-4">
-              تماس با ما
+            <h4
+              className="mb-4 text-fg"
+              style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              CONTACT
             </h4>
-            <div className="space-y-3 text-[15px] text-primary-foreground/80 leading-relaxed">
-              <div className="flex items-start gap-2">
-                <span className="font-bold whitespace-nowrap">آدرس:</span>
-                <span>تهران، هروی، اتوبان صیاد شیرازی، نرسیده به پل هروی، نبش گلستان ۴، پلاک ۱۲۹، ساختمان چوپان</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold whitespace-nowrap">تلفن:</span>
-                <a href="tel:02128428084" className="hover:underline transition-colors">021-28428084</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold whitespace-nowrap">ایمیل:</span>
-                <a href="mailto:info@tdh.ir" className="hover:underline transition-colors">info@tdh.ir</a>
-                <span>|</span>
-                <a href="mailto:sales@tdh.ir" className="hover:underline transition-colors">sales@tdh.ir</a>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-4 mt-4">
+            <div className="flex flex-col gap-3">
               <a
-                href="#"
-                className="text-primary-foreground/50 hover:text-primary-foreground transition-colors"
-                aria-label="لینکدین"
+                href="tel:02128428084"
+                className="text-fg-muted"
+                style={{ fontSize: 14 }}
+                dir="ltr"
               >
-                <Linkedin size={20} strokeWidth={1.5} />
+                ۰۲۱-۲۸۴۲۸۰۸۴
               </a>
               <a
-                href="#"
-                className="text-primary-foreground/50 hover:text-primary-foreground transition-colors"
-                aria-label="اینستاگرام"
+                href="mailto:info@tdh.ir"
+                className="text-fg-muted"
+                style={{ fontSize: 14 }}
+                dir="ltr"
               >
-                <Instagram size={20} strokeWidth={1.5} />
+                info@tdh.ir
               </a>
-              <a
-                href="#"
-                className="text-primary-foreground/50 hover:text-primary-foreground transition-colors"
-                aria-label="تلگرام"
-              >
-                <Send size={20} strokeWidth={1.5} />
-              </a>
+              <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.8, maxWidth: 280 }}>
+                تهران، هروی، اتوبان صیاد شیرازی، نبش گلستان ۴، پلاک ۱۲۹
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/10 mt-12 pt-6">
-          <p className="text-xs text-primary-foreground/50 text-center">
-            © ۱۴۰۳ TDH. تمامی حقوق محفوظ است.
-          </p>
+        <div
+          className="flex justify-between items-center mt-16 pt-6"
+          style={{ borderTop: '1px solid var(--color-line)', fontSize: 13 }}
+        >
+          <span className="text-fg-muted">
+            © ۱۴۰۳ تکین داده هوشمند. تمامی حقوق محفوظ است.
+          </span>
+          <span
+            className="text-accent"
+            style={{ fontFamily: 'var(--font-mono)', fontSize: 11, direction: 'ltr', display: 'inline-block' }}
+          >
+            TDH · TEHRAN, IR · 51.4°N 35.7°E
+          </span>
         </div>
       </div>
     </footer>
