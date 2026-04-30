@@ -88,7 +88,8 @@ export function HeroSection() {
             <div
               key={stat.key}
               style={{
-                padding: '24px 0',
+                paddingInlineStart: i > 0 ? 20 : 0,
+                paddingBlock: 24,
                 borderInlineStart: i > 0 ? '1px solid var(--color-line)' : 'none',
               }}
             >

@@ -87,7 +87,7 @@ export function ContactContent() {
           ...s.section,
         }}
       >
-        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
+        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, insetInlineStart: 40, ...s.mono }}>
           REF · 04.CONTACT
         </span>
         <div className="max-w-[1400px] mx-auto">

@@ -185,7 +185,7 @@ export function Navbar({ activePath }: NavbarProps) {
             style={{
               position: 'absolute',
               top: 20,
-              left: 20,
+              insetInlineEnd: 20,
               background: 'none',
               border: 'none',
               color: 'var(--color-fg)',

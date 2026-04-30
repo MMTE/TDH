@@ -15,7 +15,7 @@ export function SolutionsContent() {
           style={{
             position: 'absolute',
             top: 24,
-            left: 24,
+            insetInlineStart: 24,
             fontSize: 12,
             color: 'var(--color-fg-subtle)',
           }}
