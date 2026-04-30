@@ -1,224 +1,339 @@
 import { useState } from 'react';
-import { MapPin, Mail, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { PageLayout } from '@/components/layout/PageLayout';
+import { CTABlock } from '@/components/shared/CTABlock';
+
+const s = {
+  section: {
+    fontFamily: 'var(--font-sans)',
+    color: 'var(--color-fg)',
+    boxSizing: 'border-box' as const,
+  },
+  mono: {
+    fontFamily: 'var(--font-mono)',
+    fontSize: 12,
+    color: 'var(--color-fg-muted)',
+  },
+  chip: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 8,
+    padding: '6px 14px',
+    border: '1px solid var(--color-line)',
+    borderRadius: 6,
+    fontFamily: 'var(--font-mono)',
+    fontSize: 13,
+    color: 'var(--color-fg-muted)',
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: '50%',
+    background: 'var(--color-accent)',
+    flexShrink: 0,
+  },
+};
+
+const productOptions = ['Business Suite', 'Data Platform', 'Workflow', 'مشاوره'];
+
+const inputStyle: React.CSSProperties = {
+  width: '100%',
+  background: 'transparent',
+  border: 'none',
+  borderBottom: '1px solid var(--color-line-strong)',
+  padding: '14px 0',
+  fontSize: 16,
+  color: 'var(--color-fg)',
+  outline: 'none',
+  fontFamily: 'var(--font-sans)',
+};
+
+const labelStyle: React.CSSProperties = {
+  fontFamily: 'var(--font-mono)',
+  fontSize: 12,
+  color: 'var(--color-fg-subtle)',
+  textTransform: 'uppercase',
+  letterSpacing: '0.08em',
+  marginBottom: 8,
+  display: 'block',
+};
 
 export function ContactContent() {
-
   const [formData, setFormData] = useState({
     name: '',
+    company: '',
     email: '',
     phone: '',
-    company: '',
     message: '',
   });
-
+  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      message: '',
-    });
-
-    // Reset submitted state after a few seconds
-    setTimeout(() => setSubmitted(false), 5000);
-  };
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+    setSelectedProduct(null);
+  };
+
   return (
-    <PageLayout>
-      <div className="container px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Form Section */}
-          <div className="lg:col-span-3">
-            <div className="text-center lg:text-right mb-8">
-              <h1 className="text-2xl sm:text-3xl md:text-h1 lg:text-hero font-heading font-bold text-foreground mb-4">
-                تماس با ما
-              </h1>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                برای درخواست دمو، مشاوره یا سوالات خود با ما در تماس باشید. تیم ما در اسرع وقت پاسخ شما خواهد داد.
-              </p>
+    <div style={{ fontFamily: 'var(--font-sans)' }}>
+      <section
+        style={{
+          padding: '80px 40px',
+          borderBottom: '1px solid var(--color-line)',
+          position: 'relative',
+          ...s.section,
+        }}
+      >
+        <span className="mono" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
+          REF · 04.CONTACT
+        </span>
+        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+          <div style={{ ...s.chip, marginBottom: 32 }}>
+            <span style={s.dot} />
+            § ۰۴ — تماس
+          </div>
+          <h1
+            style={{
+              fontSize: 'clamp(40px, 7vw, 112px)',
+              fontWeight: 900,
+              lineHeight: 0.98,
+              letterSpacing: '-0.025em',
+              color: 'var(--color-fg)',
+            }}
+          >
+            بیایید{' '}
+            <span
+              style={{
+                textDecoration: 'underline',
+                textUnderlineOffset: '0.12em',
+                textDecorationThickness: '0.06em',
+                textDecorationColor: 'var(--color-accent)',
+              }}
+            >
+              صحبت
+            </span>{' '}
+            کنیم.
+          </h1>
+        </div>
+      </section>
+
+      <section style={{ padding: '80px 40px 120px', ...s.section }}>
+        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1.4fr 1fr',
+              gap: 64,
+            }}
+          >
+            <div
+              style={{
+                background: 'var(--color-bg-card)',
+                border: '1px solid var(--color-line)',
+                padding: '48px 40px',
+              }}
+            >
+              <span
+                className="mono"
+                style={{ fontSize: 12, color: 'var(--color-fg-subtle)', marginBottom: 40, display: 'block' }}
+              >
+                FORM · 001
+              </span>
+
+              {submitted ? (
+                <div style={{ textAlign: 'center', padding: '60px 0' }}>
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: 24 }}>
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <h3 style={{ fontSize: 24, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 12 }}>
+                    پیام شما ارسال شد
+                  </h3>
+                  <p style={{ fontSize: 16, color: 'var(--color-fg-muted)' }}>
+                    تیم ما ظرف ۲۴ ساعت با شما تماس خواهد گرفت.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px 32px', marginBottom: 32 }}>
+                    <div>
+                      <label style={labelStyle}>نام و نام خانوادگی *</label>
+                      <input
+                        required
+                        value={formData.name}
+                        onChange={(e) => handleChange('name', e.target.value)}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label style={labelStyle}>شرکت</label>
+                      <input
+                        value={formData.company}
+                        onChange={(e) => handleChange('company', e.target.value)}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label style={labelStyle}>ایمیل *</label>
+                      <input
+                        required
+                        type="email"
+                        dir="ltr"
+                        value={formData.email}
+                        onChange={(e) => handleChange('email', e.target.value)}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label style={labelStyle}>تلفن *</label>
+                      <input
+                        required
+                        type="tel"
+                        dir="ltr"
+                        value={formData.phone}
+                        onChange={(e) => handleChange('phone', e.target.value)}
+                        style={inputStyle}
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ marginBottom: 32 }}>
+                    <label style={labelStyle}>محصول مورد نظر</label>
+                    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 4 }}>
+                      {productOptions.map((p) => (
+                        <button
+                          type="button"
+                          key={p}
+                          onClick={() => setSelectedProduct(selectedProduct === p ? null : p)}
+                          style={{
+                            padding: '10px 18px',
+                            border:
+                              selectedProduct === p
+                                ? '1px solid var(--color-accent)'
+                                : '1px solid var(--color-line)',
+                            borderRadius: 6,
+                            background:
+                              selectedProduct === p
+                                ? 'var(--color-accent)'
+                                : 'transparent',
+                            color:
+                              selectedProduct === p
+                                ? 'var(--color-bg)'
+                                : 'var(--color-fg-muted)',
+                            fontSize: 14,
+                            fontWeight: 500,
+                            fontFamily: 'var(--font-sans)',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s',
+                          }}
+                        >
+                          {p}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div style={{ marginBottom: 40 }}>
+                    <label style={labelStyle}>پیام شما</label>
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => handleChange('message', e.target.value)}
+                      rows={5}
+                      style={{
+                        ...inputStyle,
+                        resize: 'none',
+                        borderBottom: '1px solid var(--color-line-strong)',
+                      }}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    style={{
+                      padding: '16px 40px',
+                      background: 'var(--color-accent)',
+                      color: 'var(--color-bg)',
+                      border: 'none',
+                      borderRadius: 6,
+                      fontSize: 16,
+                      fontWeight: 700,
+                      fontFamily: 'var(--font-sans)',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    ارسال پیام
+                  </button>
+                </form>
+              )}
             </div>
 
-            {submitted && (
-              <div className="mb-6 p-4 bg-success/10 border border-success/20 rounded-sm">
-                <p className="text-success font-medium">پیام شما با موفقیت ارسال شد</p>
-                <p className="text-sm text-muted-foreground">تیم ما به زودی با شما تماس خواهد گرفت.</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Name */}
-                <div className="space-y-2">
-                  <Label htmlFor="name">نام و نام خانوادگی *</Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
-                    required
-                    className="bg-card"
-                  />
-                </div>
-
-                {/* Company */}
-                <div className="space-y-2">
-                  <Label htmlFor="company">نام شرکت</Label>
-                  <Input
-                    id="company"
-                    value={formData.company}
-                    onChange={(e) => handleChange('company', e.target.value)}
-                    className="bg-card"
-                  />
-                </div>
-
-                {/* Email */}
-                <div className="space-y-2">
-                  <Label htmlFor="email">ایمیل *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
-                    required
-                    className="bg-card"
-                    dir="ltr"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div className="space-y-2">
-                  <Label htmlFor="phone">شماره تماس *</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    required
-                    className="bg-card"
-                    dir="ltr"
-                  />
-                </div>
-              </div>
-
-              {/* Message */}
-              <div className="space-y-2">
-                <Label htmlFor="message">پیام شما *</Label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => handleChange('message', e.target.value)}
-                  required
-                  rows={6}
-                  className="bg-card resize-none"
-                />
-              </div>
-
-              <Button type="submit" variant="hero" size="lg">
-                ارسال پیام
-              </Button>
-            </form>
-          </div>
-
-          {/* Contact Info Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-card border border-border rounded-sm p-8 sticky top-24">
-              <h2 className="text-lg font-heading font-bold text-foreground mb-6">
-                اطلاعات تماس
-              </h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <MapPin size={20} strokeWidth={1.5} className="text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-foreground">تهران، هروی، اتوبان صیاد شیرازی، نرسیده به پل هروی، نبش گلستان ۴، پلاک ۱۲۹، ساختمان چوپان</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Mail size={20} strokeWidth={1.5} className="text-accent mt-1 flex-shrink-0" />
-                  <div className="space-y-1">
-                    <a
-                      href="mailto:info@tdh.ir"
-                      className="block text-foreground hover:text-accent transition-colors"
-                      dir="ltr"
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+              {[
+                {
+                  label: 'OFFICE',
+                  content: 'تهران، هروی، اتوبان صیاد شیرازی شمال، نبش گلستان ۴، پلاک ۱۲۹، طبقه ۳',
+                },
+                {
+                  label: 'PHONE',
+                  content: '۰۲۱-۲۸۴۲۸۰۸۴',
+                  sub: 'شنبه تا چهارشنبه — ۹:۰۰ تا ۱۸:۰۰',
+                },
+                {
+                  label: 'EMAIL',
+                  content: 'info@tdh.ir',
+                },
+                {
+                  label: 'RESPONSE TIME',
+                  content: '< ۲۴ ساعت',
+                  big: true,
+                },
+              ].map((item, i) => (
+                <div
+                  key={item.label}
+                  style={{
+                    padding: '28px 0',
+                    borderBottom:
+                      i < 3 ? '1px solid var(--color-line)' : 'none',
+                  }}
+                >
+                  <span
+                    className="mono"
+                    style={{ fontSize: 12, color: 'var(--color-fg-subtle)', letterSpacing: '0.08em', display: 'block', marginBottom: 8 }}
+                  >
+                    {item.label}
+                  </span>
+                  {item.big ? (
+                    <span
+                      className="mono"
+                      style={{ fontSize: 36, fontWeight: 900, color: 'var(--color-accent)', lineHeight: 1.1 }}
                     >
-                      info@tdh.ir
-                    </a>
-                    <a
-                      href="mailto:sales@tdh.ir"
-                      className="block text-foreground hover:text-accent transition-colors"
-                      dir="ltr"
+                      {item.content}
+                    </span>
+                  ) : (
+                    <p style={{ fontSize: 17, color: 'var(--color-fg)', lineHeight: 1.6 }}>
+                      {item.content}
+                    </p>
+                  )}
+                  {item.sub && (
+                    <p
+                      className="mono"
+                      style={{ fontSize: 13, color: 'var(--color-fg-muted)', marginTop: 4 }}
                     >
-                      sales@tdh.ir
-                    </a>
-                  </div>
+                      {item.sub}
+                    </p>
+                  )}
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <Phone size={20} strokeWidth={1.5} className="text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <a
-                      href="tel:02128428084"
-                      className="text-foreground hover:text-accent transition-colors"
-                      dir="ltr"
-                    >
-                      021-28428084
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Working Hours */}
-              <div className="mt-8 pt-6 border-t border-border">
-                <h3 className="text-sm font-semibold text-foreground mb-3">
-                  ساعات کاری
-                </h3>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>شنبه تا چهارشنبه: ۹:۰۰ - ۱۸:۰۰</p>
-                  <p>پنج‌شنبه: ۹:۰۰ - ۱۳:۰۰</p>
-                  <p>جمعه: تعطیل</p>
-                </div>
-              </div>
-
-              {/* Info Note */}
-              <div className="mt-6 pt-6 border-t border-border">
-                <h3 className="text-sm font-semibold text-foreground mb-3">
-                  نکات مهم
-                </h3>
-                <ul className="space-y-2 text-xs text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">✓</span>
-                    <span>پاسخ ظرف ۲۴ ساعت</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">✓</span>
-                    <span>مشاوره رایگان</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">✓</span>
-                    <span>بدون تعهد و فشار فروش</span>
-                  </li>
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
-    </PageLayout>
+      </section>
+
+      <CTABlock />
+    </div>
   );
 }
