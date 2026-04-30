@@ -31,7 +31,7 @@ export function SolutionsContent() {
           </div>
           <h1 style={{ fontSize: 'clamp(40px, 7vw, 112px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.025em', marginBottom: 24 }}>
             فراتر از محصول.{' '}
-            <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.08em', textDecorationThickness: '0.04em', textDecorationColor: 'var(--color-accent)' }}>
+            <span style={{ color: 'var(--color-accent)' }}>
               راهکار
             </span>
             .
@@ -68,7 +68,7 @@ export function SolutionsContent() {
             <span
               className="mono"
               style={{
-                fontSize: 64,
+                fontSize: 'clamp(40px, 3vw, 56px)',
                 fontWeight: 900,
                 fontFamily: 'JetBrains Mono, var(--font-mono)',
                 color: 'var(--color-accent)',

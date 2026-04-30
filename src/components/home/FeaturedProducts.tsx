@@ -12,7 +12,7 @@ export function FeaturedProducts() {
   const others = products.filter((p) => p.slug !== 'business-suite');
 
   return (
-    <section className="py-16 px-4 md:py-28 md:px-10" style={{ background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-line)' }}>
+    <section className="py-16 px-4 md:py-24 md:px-10" style={{ background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-line)' }}>
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-end mb-12 md:mb-16">
           <div>
@@ -21,7 +21,7 @@ export function FeaturedProducts() {
             </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
               سه پلتفرم.{' '}
-              <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.12em', textDecorationThickness: '0.06em', textDecorationColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
+              <span style={{ color: 'var(--color-accent)' }}>
                 یک
               </span>{' '}
               زیرساخت.

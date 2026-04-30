@@ -7,7 +7,7 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section className="relative pt-16 pb-12 px-4 md:pt-24 md:px-10 md:pb-20" style={{ borderBottom: '1px solid var(--color-line)', overflow: 'hidden' }}>
+    <section className="relative pt-16 pb-12 px-4 md:pt-20 md:px-10 md:pb-20" style={{ borderBottom: '1px solid var(--color-line)', overflow: 'hidden' }}>
       <div className="max-w-[1400px] mx-auto">
         <span className="mono hidden md:block" style={{ position: 'absolute', top: 40, insetInlineStart: 40, fontSize: 12, color: 'var(--color-fg-subtle)' }}>
           REF · 00.HOME / HERO
@@ -23,17 +23,17 @@ export function HeroSection() {
           </span>
         </div>
 
-        <h1 style={{ fontSize: 'clamp(36px, 7.5vw, 112px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
+        <h1 style={{ fontSize: 'clamp(32px, 5vw, 80px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
           سازمان شما،
           <br />
-          <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.12em', textDecorationThickness: '0.06em', textDecorationColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
+          <span style={{ color: 'var(--color-accent)' }}>
             به طرز هوشمندانه‌ای
           </span>
           <br />
           یکپارچه.
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-20 items-start mb-16 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16 items-start mb-16 md:mb-20">
           <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)', maxWidth: 520 }}>
             TDH مجموعه‌ای یکپارچه از پلتفرم‌های سازمانی است که فرآیندهای پیچیده کسب‌وکار را ساده می‌کند. از مدیریت ارتباط با مشتری تا هوش تجاری و اتوماسیون، همه چیز در یک زیرساخت واحد با ۹۹٫۹٪ آپتایم تضمین‌شده.
           </p>

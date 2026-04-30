@@ -83,7 +83,7 @@
   --color-line-strong: oklch(0.40 0.01 60);
   --color-accent: oklch(0.72 0.13 55);
   --color-accent-soft: oklch(0.30 0.04 55);
-  --font-sans: 'Vazirmatn', 'IRANSansXFaNum', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'IRANSansXFaNum', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;

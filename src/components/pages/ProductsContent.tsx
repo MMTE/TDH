@@ -45,7 +45,7 @@ export function ProductsContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
-        className="py-16 px-4 md:py-20 md:px-10"
+        className="py-16 px-4 md:py-16 md:px-10"
         style={{
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
@@ -72,12 +72,7 @@ export function ProductsContent() {
           >
             سه پلتفرم. یک{' '}
             <span
-              style={{
-                textDecoration: 'underline',
-                textUnderlineOffset: '0.12em',
-                textDecorationThickness: '0.06em',
-                textDecorationColor: 'var(--color-accent)',
-              }}
+              style={{ color: 'var(--color-accent)' }}
             >
               زیرساخت یکپارچه
             </span>
@@ -97,7 +92,7 @@ export function ProductsContent() {
         </div>
       </section>
 
-      <section className="py-16 px-4 md:py-20 md:px-10 md:pb-28" style={{ ...s.section }}>
+      <section className="py-16 px-4 md:py-16 md:px-10 md:pb-24" style={{ ...s.section }}>
         <div className="max-w-[1400px] mx-auto">
           {products.map((product, index) => {
             const isEven = index % 2 === 0;

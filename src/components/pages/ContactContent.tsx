@@ -80,7 +80,7 @@ export function ContactContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
-        className="py-16 px-4 md:py-20 md:px-10"
+        className="py-16 px-4 md:py-16 md:px-10"
         style={{
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
@@ -106,12 +106,7 @@ export function ContactContent() {
           >
             بیایید{' '}
             <span
-              style={{
-                textDecoration: 'underline',
-                textUnderlineOffset: '0.12em',
-                textDecorationThickness: '0.06em',
-                textDecorationColor: 'var(--color-accent)',
-              }}
+              style={{ color: 'var(--color-accent)' }}
             >
               صحبت
             </span>{' '}
@@ -121,11 +116,11 @@ export function ContactContent() {
       </section>
 
       <section
-        className="py-16 px-4 md:py-20 md:pb-28 md:px-10"
+        className="py-16 px-4 md:py-16 md:pb-24 md:px-10"
         style={{ ...s.section }}
       >
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-12">
             <div
               className="p-6 md:p-12"
               style={{

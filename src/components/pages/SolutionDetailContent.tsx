@@ -49,7 +49,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
             <div>
               <h1 style={{ fontSize: 'clamp(36px, 5vw, 80px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.02em', marginBottom: 24 }}>
                 {titleBefore}
-                <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.08em', textDecorationThickness: '0.04em', textDecorationColor: 'var(--color-accent)' }}>
+                <span style={{ color: 'var(--color-accent)' }}>
                   {accentWord}
                 </span>
                 {titleAfter}
@@ -88,7 +88,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
               § ۰۱ — چالش‌ها
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
               مشکلاتی که حل می‌کنیم
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
@@ -121,7 +121,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
               § ۰۲ — قابلیت‌ها
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
               ویژگی‌ها و قابلیت‌ها
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -154,7 +154,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
               § ۰۳ — استک
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
               تکنولوژی‌ها
             </h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>

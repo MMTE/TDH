@@ -77,7 +77,7 @@ export function AboutContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
-        className="py-16 px-4 md:py-20 md:px-10"
+        className="py-16 px-4 md:py-16 md:px-10"
         style={{
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
@@ -104,18 +104,13 @@ export function AboutContent() {
           >
             از سال ۱۳۹۵{' '}
             <span
-              style={{
-                textDecoration: 'underline',
-                textUnderlineOffset: '0.12em',
-                textDecorationThickness: '0.06em',
-                textDecorationColor: 'var(--color-accent)',
-              }}
+              style={{ color: 'var(--color-accent)' }}
             >
               در حال ساختن
             </span>{' '}
             آینده‌ی نرم‌افزار سازمانی.
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
             <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)' }}>
               تکین داده هوشمند (TDH) از سال ۱۳۹۵ با هدف ارائه راهکارهای نرم‌افزاری سازمانی
               فعالیت خود را آغاز کرده است. ما باور داریم که فناوری باید در خدمت کسب‌وکار باشد،
@@ -131,7 +126,7 @@ export function AboutContent() {
       </section>
 
       <section
-        className="py-16 px-4 md:py-28 md:px-10"
+        className="py-16 px-4 md:py-24 md:px-10"
         style={{
           background: 'var(--color-bg-soft)',
           ...s.section,
@@ -171,13 +166,14 @@ export function AboutContent() {
                 }}
               >
                 <span
-                  className="mono text-4xl md:text-[56px]"
+                  className="mono text-4xl"
                   style={{
                     fontWeight: 900,
                     color: 'var(--color-accent)',
                     display: 'block',
                     lineHeight: 1,
                     marginBottom: 16,
+                    fontSize: 'clamp(36px, 3vw, 48px)',
                   }}
                 >
                   {v.num}
@@ -202,7 +198,7 @@ export function AboutContent() {
       </section>
 
       <section
-        className="py-16 px-4 md:py-28 md:px-10"
+        className="py-16 px-4 md:py-24 md:px-10"
         style={{
           borderBottom: '1px solid var(--color-line)',
           ...s.section,
@@ -257,11 +253,12 @@ export function AboutContent() {
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
-                  className="mono text-3xl md:text-[48px]"
+                  className="mono text-3xl"
                   style={{
                     fontWeight: 900,
                     color: 'var(--color-fg)',
                     lineHeight: 1,
+                    fontSize: 'clamp(28px, 2.5vw, 40px)',
                   }}
                 >
                   {t.year}
@@ -297,7 +294,7 @@ export function AboutContent() {
       </section>
 
       <section
-        className="py-16 px-4 md:py-28 md:px-10"
+        className="py-16 px-4 md:py-24 md:px-10"
         style={{
           background: 'var(--color-bg-soft)',
           ...s.section,

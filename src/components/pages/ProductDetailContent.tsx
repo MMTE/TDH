@@ -104,7 +104,7 @@ function PdHero({
 }) {
   return (
     <section
-      className="py-12 px-4 md:py-16 md:px-10 md:pb-20"
+      className="py-12 px-4 md:py-16 md:px-10 md:pb-16"
       style={{
         borderBottom: '1px solid var(--color-line)',
         position: 'relative',
@@ -127,7 +127,7 @@ function PdHero({
 
         <h1
           style={{
-            fontSize: 'clamp(36px, 6vw, 96px)',
+            fontSize: 'clamp(28px, 4.5vw, 72px)',
             fontWeight: 900,
             lineHeight: 0.98,
             letterSpacing: '-0.025em',
@@ -137,12 +137,7 @@ function PdHero({
         >
           {prod.name}{' '}
           <span
-            style={{
-              textDecoration: 'underline',
-              textUnderlineOffset: '0.12em',
-              textDecorationThickness: '0.06em',
-              textDecorationColor: 'var(--color-accent)',
-            }}
+            style={{ color: 'var(--color-accent)' }}
           >
             TDH
           </span>
@@ -286,7 +281,7 @@ function PdProblems({ product: prod }: { product: Product }) {
         </span>
         <h2
           style={{
-            fontSize: 'clamp(28px, 4vw, 56px)',
+            fontSize: 'clamp(24px, 3vw, 44px)',
             fontWeight: 800,
             lineHeight: 1.1,
             color: 'var(--color-fg)',
@@ -329,7 +324,7 @@ function PdFeatures({ product: prod, total }: { product: Product; total: number 
         </span>
         <h2
           style={{
-            fontSize: 'clamp(28px, 4vw, 56px)',
+            fontSize: 'clamp(24px, 3vw, 44px)',
             fontWeight: 800,
             lineHeight: 1.1,
             color: 'var(--color-fg)',
@@ -372,7 +367,7 @@ function PdProcess({ product: prod }: { product: Product }) {
         </span>
         <h2
           style={{
-            fontSize: 'clamp(28px, 4vw, 56px)',
+            fontSize: 'clamp(24px, 3vw, 44px)',
             fontWeight: 800,
             lineHeight: 1.1,
             color: 'var(--color-fg)',
@@ -399,8 +394,8 @@ function PdProcess({ product: prod }: { product: Product }) {
             >
               <div
                 style={{
-                  width: 44,
-                  height: 44,
+                  width: 40,
+                  height: 40,
                   borderRadius: '50%',
                   border: '2px solid var(--color-accent)',
                   background: 'var(--color-bg)',
@@ -409,7 +404,7 @@ function PdProcess({ product: prod }: { product: Product }) {
                   justifyContent: 'center',
                   marginBottom: 12,
                   fontFamily: 'var(--font-mono)',
-                  fontSize: 14,
+                  fontSize: 13,
                   fontWeight: 700,
                   color: 'var(--color-accent)',
                 }}
@@ -451,7 +446,7 @@ function PdTech({ product: prod }: { product: Product }) {
         </span>
         <h2
           style={{
-            fontSize: 'clamp(28px, 4vw, 56px)',
+            fontSize: 'clamp(24px, 3vw, 44px)',
             fontWeight: 800,
             lineHeight: 1.1,
             color: 'var(--color-fg)',
@@ -495,7 +490,7 @@ function PdRelated({ relatedProducts }: { relatedProducts: Product[] }) {
         <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-baseline" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
           <h2
             style={{
-              fontSize: 'clamp(28px, 4vw, 56px)',
+              fontSize: 'clamp(24px, 3vw, 44px)',
               fontWeight: 800,
               lineHeight: 1.1,
               color: 'var(--color-fg)',

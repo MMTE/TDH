@@ -15,7 +15,7 @@ export function CTABlock({
 
   return (
     <section
-      className="py-16 px-4 md:py-28 md:px-10"
+      className="py-16 px-4 md:py-24 md:px-10"
       style={{
         position: 'relative',
         background: 'var(--color-accent)',
@@ -61,7 +61,7 @@ export function CTABlock({
         <div style={{ maxWidth: 800 }}>
           <h2
             style={{
-              fontSize: 'clamp(28px, 7vw, 112px)',
+              fontSize: 'clamp(24px, 5vw, 72px)',
               fontWeight: 900,
               lineHeight: 0.98,
               letterSpacing: '-0.025em',
@@ -75,12 +75,7 @@ export function CTABlock({
                 <span key={i}>
                   {part}
                   <span
-                    style={{
-                      textDecoration: 'underline',
-                      textUnderlineOffset: '0.12em',
-                      textDecorationThickness: '0.06em',
-                      textDecorationColor: 'var(--color-bg)',
-                    }}
+                    style={{}}
                   >
                     {accentWord}
                   </span>
