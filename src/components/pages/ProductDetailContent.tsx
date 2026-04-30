@@ -276,9 +276,6 @@ function PdProblems({ product: prod }: { product: Product }) {
   return (
     <section style={{ background: 'var(--color-bg-soft)', ...s.section }}>
       <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
-        <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
-          REF · PROBLEMS
-        </span>
         <h2
           style={{
             fontSize: 'clamp(24px, 3vw, 44px)',
@@ -319,9 +316,6 @@ function PdFeatures({ product: prod, total }: { product: Product; total: number 
   return (
     <section style={{ ...s.section }}>
       <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
-        <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
-          REF · FEATURES
-        </span>
         <h2
           style={{
             fontSize: 'clamp(24px, 3vw, 44px)',
@@ -362,9 +356,7 @@ function PdProcess({ product: prod }: { product: Product }) {
   return (
     <section style={{ background: 'var(--color-bg-soft)', ...s.section }}>
       <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
-        <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
-          REF · PROCESS
-        </span>
+
         <h2
           style={{
             fontSize: 'clamp(24px, 3vw, 44px)',
@@ -441,9 +433,6 @@ function PdTech({ product: prod }: { product: Product }) {
   return (
     <section style={{ ...s.section }}>
       <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
-        <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
-          REF · TECH
-        </span>
         <h2
           style={{
             fontSize: 'clamp(24px, 3vw, 44px)',

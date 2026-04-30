@@ -10,39 +10,7 @@ export function SolutionsContent() {
           position: 'relative',
         }}
       >
-        <span
-          className="mono"
-          style={{
-            position: 'absolute',
-            top: 24,
-            insetInlineStart: 24,
-            fontSize: 12,
-            color: 'var(--color-fg-subtle)',
-          }}
-        >
-          REF · 02.SOLUTIONS
-        </span>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
-            <span style={{ width: 8, height: 8, background: 'var(--color-accent)', display: 'inline-block' }} />
-            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              ۰۲ — راهکارهای فنی
-            </span>
-          </div>
-          <h1 style={{ fontSize: 'clamp(40px, 7vw, 112px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.025em', marginBottom: 24 }}>
-            فراتر از محصول.{' '}
-            <span style={{ color: 'var(--color-accent)' }}>
-              راهکار
-            </span>
-            .
-          </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 640 }}>
-            از زیرساخت ابری و هاستینگ تا توسعه نرم‌افزار سفارشی، DevOps، یکپارچه‌سازی API و مشاوره فنی — ما تمام نیازهای فنی کسب‌وکار شما را پوشش می‌دهیم.
-          </p>
-        </div>
-      </section>
-
-      <section style={{ borderBottom: '1px solid var(--color-line)' }}>
+        <section style={{ borderBottom: '1px solid var(--color-line)' }}>
         {solutions.map((sol, i) => (
           <a
             key={sol.slug}
@@ -101,6 +69,7 @@ export function SolutionsContent() {
             <span style={{ fontSize: 24, color: 'var(--color-accent)', transition: 'transform 0.2s' }}>←</span>
           </a>
         ))}
+        </section>
       </section>
     </main>
   );

@@ -9,9 +9,6 @@ export function HeroSection() {
   return (
     <section className="relative pt-16 pb-12 px-4 md:pt-20 md:px-10 md:pb-20" style={{ borderBottom: '1px solid var(--color-line)', overflow: 'hidden' }}>
       <div className="max-w-[1400px] mx-auto">
-        <span className="mono hidden md:block" style={{ position: 'absolute', top: 40, insetInlineStart: 40, fontSize: 12, color: 'var(--color-fg-subtle)' }}>
-          REF · 00.HOME / HERO
-        </span>
         <span className="mono hidden md:block" style={{ position: 'absolute', top: 40, insetInlineEnd: 40, fontSize: 12, color: 'var(--color-fg-subtle)' }}>
           ۱۴۰۴ · TEHRAN, IR
         </span>

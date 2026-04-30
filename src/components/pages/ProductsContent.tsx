@@ -52,9 +52,6 @@ export function ProductsContent() {
           ...s.section,
         }}
       >
-        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
-          REF · 01.PRODUCTS
-        </span>
         <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
