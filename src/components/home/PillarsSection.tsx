@@ -10,7 +10,7 @@ export function PillarsSection() {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-10 items-end mb-12 md:mb-16">
           <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em' }}>
-            § ۰۲ — ستون‌های ما
+            ۰۲ — ستون‌های ما
           </span>
           <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
             سه ستون که هر چیزی را که می‌سازیم نگه می‌دارند.
@@ -35,7 +35,7 @@ export function PillarsSection() {
               <h3 style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 16, fontFamily: 'var(--font-sans)' }}>
                 {pillar.title}
               </h3>
-              <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
+              <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
                 {pillar.description}
               </p>
             </div>

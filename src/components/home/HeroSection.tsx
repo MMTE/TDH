@@ -23,7 +23,7 @@ export function HeroSection() {
           </span>
         </div>
 
-        <h1 style={{ fontSize: 'clamp(32px, 5vw, 80px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
+        <h1 style={{ fontSize: 'clamp(32px, 5vw, 80px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
           سازمان شما،
           <br />
           <span style={{ color: 'var(--color-accent)' }}>
@@ -34,7 +34,7 @@ export function HeroSection() {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16 items-start mb-16 md:mb-20">
-          <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)', maxWidth: 520 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 520 }}>
             TDH مجموعه‌ای یکپارچه از پلتفرم‌های سازمانی است که فرآیندهای پیچیده کسب‌وکار را ساده می‌کند. از مدیریت ارتباط با مشتری تا هوش تجاری و اتوماسیون، همه چیز در یک زیرساخت واحد با ۹۹٫۹٪ آپتایم تضمین‌شده.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

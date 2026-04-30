@@ -58,13 +58,13 @@ export function ProductsContent() {
         <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
-            § ۰۱ — کاتالوگ محصولات
+            ۰۱ — کاتالوگ محصولات
           </div>
           <h1
             style={{
               fontSize: 'clamp(40px, 7vw, 112px)',
               fontWeight: 900,
-              lineHeight: 0.98,
+              lineHeight: 1.15,
               letterSpacing: '-0.025em',
               color: 'var(--color-fg)',
               marginBottom: 24,
@@ -81,7 +81,7 @@ export function ProductsContent() {
           <p
             style={{
               fontSize: 18,
-              lineHeight: 1.7,
+              lineHeight: 1.65,
               color: 'var(--color-fg-muted)',
               maxWidth: 600,
             }}
@@ -169,7 +169,7 @@ function MetaBlock({ product }: { product: (typeof products)[number] }) {
       <p
         style={{
           fontSize: 16,
-          lineHeight: 1.7,
+          lineHeight: 1.65,
           color: 'var(--color-fg-muted)',
           marginBottom: 24,
         }}

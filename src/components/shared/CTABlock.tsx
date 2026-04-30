@@ -63,7 +63,7 @@ export function CTABlock({
             style={{
               fontSize: 'clamp(24px, 5vw, 72px)',
               fontWeight: 900,
-              lineHeight: 0.98,
+              lineHeight: 1.15,
               letterSpacing: '-0.025em',
               marginBottom: 24,
               color: 'var(--color-bg)',
@@ -89,7 +89,7 @@ export function CTABlock({
           <p
             style={{
               fontSize: 18,
-              lineHeight: 1.7,
+              lineHeight: 1.65,
               opacity: 0.85,
               marginBottom: 48,
               maxWidth: 520,

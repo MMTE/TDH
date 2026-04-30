@@ -129,7 +129,7 @@ function PdHero({
           style={{
             fontSize: 'clamp(28px, 4.5vw, 72px)',
             fontWeight: 900,
-            lineHeight: 0.98,
+            lineHeight: 1.15,
             letterSpacing: '-0.025em',
             color: 'var(--color-fg)',
             marginBottom: 20,
@@ -146,7 +146,7 @@ function PdHero({
         <p
           style={{
             fontSize: 18,
-            lineHeight: 1.7,
+            lineHeight: 1.65,
             color: 'var(--color-fg-muted)',
             maxWidth: 640,
             marginBottom: 32,
@@ -307,7 +307,7 @@ function PdProblems({ product: prod }: { product: Product }) {
             >
               0{i + 1}
             </span>
-            <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--color-fg)' }}>{problem}</p>
+            <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--color-fg)' }}>{problem}</p>
           </div>
         ))}
       </div>

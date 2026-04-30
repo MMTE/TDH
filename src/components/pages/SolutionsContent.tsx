@@ -26,17 +26,17 @@ export function SolutionsContent() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
             <span style={{ width: 8, height: 8, background: 'var(--color-accent)', display: 'inline-block' }} />
             <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              § ۰۲ — راهکارهای فنی
+              ۰۲ — راهکارهای فنی
             </span>
           </div>
-          <h1 style={{ fontSize: 'clamp(40px, 7vw, 112px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.025em', marginBottom: 24 }}>
+          <h1 style={{ fontSize: 'clamp(40px, 7vw, 112px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.025em', marginBottom: 24 }}>
             فراتر از محصول.{' '}
             <span style={{ color: 'var(--color-accent)' }}>
               راهکار
             </span>
             .
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)', maxWidth: 640 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 640 }}>
             از زیرساخت ابری و هاستینگ تا توسعه نرم‌افزار سفارشی، DevOps، یکپارچه‌سازی API و مشاوره فنی — ما تمام نیازهای فنی کسب‌وکار شما را پوشش می‌دهیم.
           </p>
         </div>

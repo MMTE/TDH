@@ -12,7 +12,7 @@ export function WhyTDHSection() {
       <div className="max-w-[1400px] mx-auto">
         <div style={{ marginBottom: 64 }}>
           <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em', display: 'block', marginBottom: 16 }}>
-            § ۰۴ — چرا TDH
+            ۰۴ — چرا TDH
           </span>
           <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
             پنج دلیل که سازمان‌های پیشرو ما را انتخاب می‌کنند.
@@ -36,7 +36,7 @@ export function WhyTDHSection() {
               <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 8, fontFamily: 'var(--font-sans)' }}>
                 {reason.title}
               </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
+              <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
                 {reason.description}
               </p>
             </div>

@@ -39,7 +39,7 @@ export function Footer() {
                 تکین داده هوشمند
               </span>
             </div>
-            <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.8, maxWidth: 320 }}>
+            <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.7, maxWidth: 320 }}>
               راهکارهای نرم‌افزاری سازمانی برای کسب‌وکارهای در حال رشد. فناوری · نوآوری · نرم‌افزار.
             </p>
           </div>
@@ -111,7 +111,7 @@ export function Footer() {
               >
                 info@tdh.ir
               </a>
-              <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.8, maxWidth: 280 }}>
+              <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.7, maxWidth: 280 }}>
                 تهران، هروی، اتوبان صیاد شیرازی، نبش گلستان ۴، پلاک ۱۲۹
               </p>
             </div>

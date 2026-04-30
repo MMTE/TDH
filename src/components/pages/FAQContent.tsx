@@ -113,13 +113,13 @@ export function FAQContent() {
         <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
-            § ۰۵ — سوالات متداول
+            ۰۵ — سوالات متداول
           </div>
           <h1
             style={{
               fontSize: 'clamp(40px, 7vw, 112px)',
               fontWeight: 900,
-              lineHeight: 0.98,
+              lineHeight: 1.15,
               letterSpacing: '-0.025em',
               color: 'var(--color-fg)',
               marginBottom: 24,
@@ -127,7 +127,7 @@ export function FAQContent() {
           >
             سوالات متداول
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 600 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--color-fg-muted)', maxWidth: 600 }}>
             پاسخ به سوالات رایج درباره محصولات، قیمت‌گذاری، پیاده‌سازی و پشتیبانی TDH.
           </p>
         </div>
@@ -236,7 +236,7 @@ export function FAQContent() {
                           <p
                             style={{
                               fontSize: 16,
-                              lineHeight: 1.8,
+                              lineHeight: 1.7,
                               color: 'var(--color-fg-muted)',
                             }}
                           >

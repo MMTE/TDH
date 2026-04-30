@@ -90,13 +90,13 @@ export function AboutContent() {
         <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
-            § ۰۳ — درباره ما
+            ۰۳ — درباره ما
           </div>
           <h1
             style={{
               fontSize: 'clamp(40px, 7vw, 112px)',
               fontWeight: 900,
-              lineHeight: 0.98,
+              lineHeight: 1.15,
               letterSpacing: '-0.025em',
               color: 'var(--color-fg)',
               marginBottom: 48,
@@ -111,12 +111,12 @@ export function AboutContent() {
             آینده‌ی نرم‌افزار سازمانی.
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
-            <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)' }}>
+            <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)' }}>
               تکین داده هوشمند (TDH) از سال ۱۳۹۵ با هدف ارائه راهکارهای نرم‌افزاری سازمانی
               فعالیت خود را آغاز کرده است. ما باور داریم که فناوری باید در خدمت کسب‌وکار باشد،
               نه برعکس.
             </p>
-            <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)' }}>
+            <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)' }}>
               امروز، با بیش از ۹ سال تجربه و صدها پروژه موفق، به سازمان‌های ایرانی در مسیر
               تحول دیجیتال خدمت می‌رسانیم. سه پلتفرم اصلی ما — مجموعه کسب‌وکار، پلتفرم داده
               و گردش‌کار — زیرساخت یکپارچه‌ای برای رشد سازمانی فراهم می‌کنند.
@@ -141,7 +141,7 @@ export function AboutContent() {
             }}
           >
             <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              § ۰۱ — اصول ما
+              ۰۱ — اصول ما
             </span>
             <h2
               style={{
@@ -188,7 +188,7 @@ export function AboutContent() {
                 >
                   {v.title}
                 </h3>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--color-fg-muted)' }}>
+                <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--color-fg-muted)' }}>
                   {v.desc}
                 </p>
               </div>
@@ -213,7 +213,7 @@ export function AboutContent() {
             }}
           >
             <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              § ۰۲ — مسیر ما
+              ۰۲ — مسیر ما
             </span>
             <h2
               style={{
@@ -309,7 +309,7 @@ export function AboutContent() {
             }}
           >
             <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              § ۰۳ — تیم
+              ۰۳ — تیم
             </span>
             <h2
               style={{

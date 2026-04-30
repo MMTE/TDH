@@ -47,14 +47,14 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: 80, alignItems: 'start' }}>
             <div>
-              <h1 style={{ fontSize: 'clamp(36px, 5vw, 80px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.02em', marginBottom: 24 }}>
+              <h1 style={{ fontSize: 'clamp(36px, 5vw, 80px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: 24 }}>
                 {titleBefore}
                 <span style={{ color: 'var(--color-accent)' }}>
                   {accentWord}
                 </span>
                 {titleAfter}
               </h1>
-              <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)', marginBottom: 40, maxWidth: 600 }}>
+              <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', marginBottom: 40, maxWidth: 600 }}>
                 {sol.fullText}
               </p>
               <a
@@ -86,7 +86,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         <section style={{ background: 'var(--color-bg-soft)', padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
           <div style={{ maxWidth: 1440, margin: '0 auto' }}>
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
-              § ۰۱ — چالش‌ها
+              ۰۱ — چالش‌ها
             </span>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
               مشکلاتی که حل می‌کنیم
@@ -105,7 +105,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
                   >
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--color-fg)' }}>
+                  <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--color-fg)' }}>
                     {problem}
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         <section style={{ padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
           <div style={{ maxWidth: 1440, margin: '0 auto' }}>
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
-              § ۰۲ — قابلیت‌ها
+              ۰۲ — قابلیت‌ها
             </span>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
               ویژگی‌ها و قابلیت‌ها
@@ -152,7 +152,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         <section style={{ padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
           <div style={{ maxWidth: 1440, margin: '0 auto' }}>
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
-              § ۰۳ — استک
+              ۰۳ — استک
             </span>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
               تکنولوژی‌ها
