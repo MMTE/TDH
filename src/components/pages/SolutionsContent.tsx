@@ -36,8 +36,8 @@ export function SolutionsContent() {
             <span
               className="mono"
               style={{
-                fontSize: 'clamp(40px, 3vw, 56px)',
-                fontWeight: 900,
+                fontSize: 'clamp(28px, 4vw, 52px)',
+                fontWeight: 800,
                 fontFamily: 'JetBrains Mono, var(--font-mono)',
                 color: 'var(--color-accent)',
                 lineHeight: 1,

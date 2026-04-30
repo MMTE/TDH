@@ -47,7 +47,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: 80, alignItems: 'start' }}>
             <div>
-              <h1 style={{ fontSize: 'clamp(36px, 5vw, 80px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: 24 }}>
+              <h1 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: 24 }}>
                 {titleBefore}
                 <span style={{ color: 'var(--color-accent)' }}>
                   {accentWord}
