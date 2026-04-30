@@ -3,9 +3,8 @@ import Layout from '@/layouts/Layout.astro';
 import { HeroSection } from '@/components/home/HeroSection';
 import { PillarsSection } from '@/components/home/PillarsSection';
 import { FeaturedProducts } from '@/components/home/FeaturedProducts';
-// import { StatsSection } from '@/components/home/StatsSection';
-import { TrustBar } from '@/components/home/TrustBar';
 import { WhyTDHSection } from '@/components/home/WhyTDHSection';
+import { CTABlock } from '@/components/shared/CTABlock';
 import { organizationStructuredData, websiteStructuredData } from '@/lib/seo';
 
 const structuredData = [organizationStructuredData, websiteStructuredData];
@@ -14,16 +13,15 @@ const structuredData = [organizationStructuredData, websiteStructuredData];
 <Layout
   title="TDH - نرم‌افزار سازمانی ERP، CRM، هوش تجاری و اتوماسیون فرآیند | راهکارهای SaaS"
   description="پلتفرم‌های SaaS قدرتمند TDH برای کسب‌وکارهای سازمانی ایرانی. مجموعه کسب‌وکار (ERP/CRM)، پلتفرم داده (BI)، و گردش‌کار (اتوماسیون). درخواست دمو رایگان."
-  keywords="نرم‌افزار سازمانی, ERP ایرانی, سیستم CRM, پلتفرم داده, هوش تجاری, BI, گردش‌کار سازمانی, اتوماسیون فرآیند, نرم‌افزار SaaS, TDH, تکنولوژی داده هوشمند, ERP برای شرکت‌های کوچک, بهترین سیستم CRM ایرانی, پلتفرم هوش تجاری ایران"
+  keywords="نرم‌افزار سازمانی, ERP ایرانی, سیستم CRM, پلتفرم داده, هوش تجاری, BI, گردش‌کار سازمانی, اتوماسیون فرآیند, نرم‌افزار SaaS, TDH"
   canonical="/"
   structuredData={structuredData}
 >
   <main>
-    <HeroSection client:idle />
-    <PillarsSection client:idle />
-    <WhyTDHSection client:idle />
-    <FeaturedProducts client:idle />
-    {/* <StatsSection client:idle /> */}
-    <TrustBar client:idle />
+    <HeroSection />
+    <PillarsSection />
+    <FeaturedProducts />
+    <WhyTDHSection />
+    <CTABlock />
   </main>
 </Layout>

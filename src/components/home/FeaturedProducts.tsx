@@ -1,83 +1,112 @@
-import { LayoutGrid, BarChart3, GitBranch, ArrowLeft } from 'lucide-react';
+import { products } from '@/lib/products';
+import { MockDashboard } from '@/components/shared/MockDashboard';
+
+const variantMap: Record<string, 'suite' | 'data' | 'workflow'> = {
+  'business-suite': 'suite',
+  'data-platform': 'data',
+  'workflow': 'workflow',
+};
 
 export function FeaturedProducts() {
-  const products = [
-    {
-      icon: LayoutGrid,
-      title: 'مجموعه کسب‌وکار TDH',
-      tagline: 'پلتفرم مدیریت کسب‌وکار یکپارچه',
-    },
-    {
-      icon: BarChart3,
-      title: 'پلتفرم داده TDH',
-      tagline: 'تبدیل داده به تصمیم',
-    },
-    {
-      icon: GitBranch,
-      title: 'گردش‌کار TDH',
-      tagline: 'عملیات خود را خودکار کنید',
-    },
-  ];
+  const featured = products.find((p) => p.slug === 'business-suite')!;
+  const others = products.filter((p) => p.slug !== 'business-suite');
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-            محصولات برجسته
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            راه‌حل‌های نرم‌افزاری قدرتمند و پلتفرم‌های یکپارچه که تمام نیازهای کسب‌وکار شما را پوشش می‌دهند.
+    <section style={{ padding: '120px 40px', background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-line)' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'end', marginBottom: 64 }}>
+          <div>
+            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em', display: 'block', marginBottom: 16 }}>
+              § ۰۳ — محصولات
+            </span>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
+              سه پلتفرم.{' '}
+              <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.12em', textDecorationThickness: '0.06em', textDecorationColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
+                یک
+              </span>{' '}
+              زیرساخت.
+            </h2>
+          </div>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
+            مجموعه‌ای از پلتفرم‌های یکپارچه که تمام نیازهای سازمانی شما را پوشش می‌دهد — از مدیریت ارتباط با مشتری و هوش تجاری تا اتوماسیون فرآیندها.
           </p>
         </div>
 
-        {/* Products Preview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {products.map((product) => {
-            const Icon = product.icon;
-            return (
-              <a
-                key={product.title}
-                href="/products"
-                className="data-stream-card group bg-card border border-border rounded-sm p-6 hover:border-accent"
-              >
-                {/* Product Mock */}
-                <div className="aspect-video bg-muted/50 rounded-sm border border-border mb-4 overflow-hidden group-hover:border-accent/30">
-                  <div className="w-full h-full p-3 flex flex-col gap-1.5">
-                    <div className="h-2 bg-secondary/20 rounded-sm w-1/3" />
-                    <div className="flex-1 flex gap-1.5">
-                      <div className="w-1/4 bg-secondary/10 rounded-sm" />
-                      <div className="flex-1 bg-accent/10 rounded-sm group-hover:bg-accent/15" />
-                    </div>
-                  </div>
-                </div>
+        <a
+          href={`/products/${featured.slug}`}
+          style={{
+            display: 'block',
+            background: 'var(--color-bg-card)',
+            border: '1px solid var(--color-line)',
+            borderRadius: 8,
+            overflow: 'hidden',
+            textDecoration: 'none',
+            color: 'inherit',
+            marginBottom: 24,
+          }}
+        >
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 0 }}>
+            <div style={{ padding: '40px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', letterSpacing: '0.06em', marginBottom: 16 }}>
+                FEATURED · {featured.slug.toUpperCase().replace('-', ' ')}
+              </span>
+              <h3 style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 8, fontFamily: 'var(--font-sans)' }}>
+                {featured.name}
+              </h3>
+              <p style={{ fontSize: 14, color: 'var(--color-accent)', marginBottom: 16, fontFamily: 'var(--font-sans)' }}>
+                {featured.tagline}
+              </p>
+              <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--color-fg-muted)', marginBottom: 24, fontFamily: 'var(--font-sans)' }}>
+                {featured.shortDescription}
+              </p>
+              <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)', marginBottom: 24 }}>
+                {featured.pricing}
+              </span>
+              <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-accent)', display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)' }}>
+                مشاهده جزئیات
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+            <div style={{ borderInlineStart: '1px solid var(--color-line)' }}>
+              <MockDashboard variant="suite" />
+            </div>
+          </div>
+        </a>
 
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-xs text-accent mb-1">
-                      {product.tagline}
-                    </p>
-                    <h3 className="font-heading font-bold text-foreground">
-                      {product.title}
-                    </h3>
-                  </div>
-                  <Icon size={24} strokeWidth={1.5} className="text-secondary group-hover:text-accent" />
-                </div>
-              </a>
-            );
-          })}
-        </div>
-
-        {/* View All Products Link */}
-        <div className="text-center">
-          <a
-            href="/products"
-            className="inline-flex items-center gap-2 text-accent font-medium"
-          >
-            مشاهده همه محصولات
-            <ArrowLeft size={18} strokeWidth={1.5} />
-          </a>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
+          {others.map((product) => (
+            <a
+              key={product.slug}
+              href={`/products/${product.slug}`}
+              style={{
+                display: 'block',
+                background: 'var(--color-bg-card)',
+                border: '1px solid var(--color-line)',
+                borderRadius: 8,
+                overflow: 'hidden',
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+            >
+              <div style={{ padding: '24px 24px 16px' }}>
+                <span className="mono" style={{ fontSize: 11, color: 'var(--color-fg-subtle)', letterSpacing: '0.06em', display: 'block', marginBottom: 8 }}>
+                  {product.slug.toUpperCase().replace('-', ' ')}
+                </span>
+                <h3 style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 4, fontFamily: 'var(--font-sans)' }}>
+                  {product.name}
+                </h3>
+                <p style={{ fontSize: 13, color: 'var(--color-accent)', marginBottom: 4, fontFamily: 'var(--font-sans)' }}>
+                  {product.tagline}
+                </p>
+                <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-muted)' }}>
+                  {product.pricing}
+                </span>
+              </div>
+              <MockDashboard variant={variantMap[product.slug]} />
+            </a>
+          ))}
         </div>
       </div>
     </section>

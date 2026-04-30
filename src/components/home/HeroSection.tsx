@@ -1,64 +1,108 @@
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+const stats = [
+  { key: 'UPTIME', number: '۹۹٫۹٪', label: 'آپتایم تضمین‌شده' },
+  { key: 'USERS', number: '+۱۰٬۰۰۰', label: 'کاربر فعال' },
+  { key: 'CLIENTS', number: '+۵۰', label: 'مشتری سازمانی' },
+  { key: 'EST. 1395', number: '۹+', label: 'سال تجربه' },
+];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 md:pt-0">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted">
-        {/* Subtle Grid Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, var(--color-primary) 1px, transparent 1px),
-              linear-gradient(to bottom, var(--color-primary) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px',
-          }}
-        />
+    <section style={{ position: 'relative', padding: '100px 40px 80px', borderBottom: '1px solid var(--color-line)', overflow: 'hidden' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <span className="mono" style={{ position: 'absolute', top: 40, insetInlineStart: 40, fontSize: 12, color: 'var(--color-fg-subtle)' }}>
+          REF · 00.HOME / HERO
+        </span>
+        <span className="mono" style={{ position: 'absolute', top: 40, insetInlineEnd: 40, fontSize: 12, color: 'var(--color-fg-subtle)' }}>
+          ۱۴۰۴ · TEHRAN, IR
+        </span>
 
-        {/* Abstract Software Interface Elements */}
-        <div className="absolute top-1/4 right-10 w-64 h-40 border border-border/30 rounded-sm opacity-20 hidden lg:block">
-          <div className="p-3 space-y-2">
-            <div className="h-2 bg-secondary/30 rounded-sm w-1/2" />
-            <div className="h-16 bg-accent/10 rounded-sm" />
-            <div className="flex gap-2">
-              <div className="h-3 bg-secondary/20 rounded-sm flex-1" />
-              <div className="h-3 bg-secondary/20 rounded-sm flex-1" />
-            </div>
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 40 }}>
+          <span style={{ width: 8, height: 8, background: 'var(--color-accent)', display: 'inline-block', borderRadius: '50%' }} />
+          <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
+            TDH·001 — پلتفرم سازمانی یکپارچه
+          </span>
         </div>
 
-        <div className="absolute bottom-1/4 left-10 w-48 h-32 border border-border/30 rounded-sm opacity-20 hidden lg:block">
-          <div className="p-3 space-y-2">
-            <div className="h-2 bg-secondary/30 rounded-sm w-2/3" />
-            <div className="flex gap-2 h-16">
-              <div className="w-1/3 bg-secondary/20 rounded-sm" />
-              <div className="flex-1 bg-accent/10 rounded-sm" />
-            </div>
-          </div>
-        </div>
-      </div>
+        <h1 style={{ fontSize: 'clamp(56px, 7.5vw, 112px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
+          سازمان شما،
+          <br />
+          <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.12em', textDecorationThickness: '0.06em', textDecorationColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
+            به طرز هوشمندانه‌ای
+          </span>
+          <br />
+          یکپارچه.
+        </h1>
 
-      {/* Content */}
-      <div className="container relative z-10 px-4 sm:px-6 text-center py-12 sm:py-16 md:py-0">
-        <div className="max-w-4xl mx-auto">
-          {/* Main Headline - Static */}
-          <h1 className="text-2xl sm:text-3xl md:text-h1 lg:text-hero font-heading font-bold text-foreground leading-tight mb-4 sm:mb-6 text-center px-2 sm:px-0">
-            مدیریت سازمان؛ از ERP و CRM تا هوش تجاری و اتوماسیون فرآیند
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2 sm:px-0">شرکت تکین داده هوشمند ارائه‌دهنده راهکارهای نرم‌افزاری سازمانی، با پلتفرم‌های قدرتمند ERP، سیستم CRM پیشرفته، هوش تجاری (BI) و اتوماسیون گردش‌کار، زیرساخت دیجیتال یکپارچه‌ای برای رشد هوشمند، تصمیم‌گیری دقیق و افزایش بهره‌وری سازمان شما فراهم می‌کند.</p>
-
-          {/* CTA */}
-          <Button asChild variant="hero" size="lg">
-            <a href="/products">
-              محصولات ما را ببینید
-              <ArrowLeft size={20} strokeWidth={1.5} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 80, alignItems: 'start', marginBottom: 80 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)', maxWidth: 520 }}>
+            TDH مجموعه‌ای یکپارچه از پلتفرم‌های سازمانی است که فرآیندهای پیچیده کسب‌وکار را ساده می‌کند. از مدیریت ارتباط با مشتری تا هوش تجاری و اتوماسیون، همه چیز در یک زیرساخت واحد با ۹۹٫۹٪ آپتایم تضمین‌شده.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <a
+              href="/contact"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 8,
+                padding: '14px 32px',
+                background: 'var(--color-accent)',
+                color: 'var(--color-bg)',
+                borderRadius: 6,
+                fontWeight: 700,
+                fontSize: 15,
+                textDecoration: 'none',
+                fontFamily: 'var(--font-sans)',
+              }}
+            >
+              درخواست دمو رایگان
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </a>
-          </Button>
+            <a
+              href="/products"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 8,
+                padding: '14px 32px',
+                background: 'transparent',
+                color: 'var(--color-fg)',
+                borderRadius: 6,
+                fontWeight: 700,
+                fontSize: 15,
+                textDecoration: 'none',
+                border: '1px solid var(--color-line-strong)',
+                fontFamily: 'var(--font-sans)',
+              }}
+            >
+              مشاهده محصولات
+            </a>
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid var(--color-line)' }}>
+          {stats.map((stat, i) => (
+            <div
+              key={stat.key}
+              style={{
+                padding: '24px 0',
+                borderInlineStart: i > 0 ? '1px solid var(--color-line)' : 'none',
+              }}
+            >
+              <span className="mono" style={{ fontSize: 11, color: 'var(--color-fg-subtle)', letterSpacing: '0.08em' }}>
+                0{i + 1} · {stat.key}
+              </span>
+              <div style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 900, color: 'var(--color-fg)', lineHeight: 1.2, marginTop: 8, fontFamily: 'var(--font-sans)' }}>
+                {stat.number}
+              </div>
+              <div style={{ fontSize: 14, color: 'var(--color-fg-muted)', marginTop: 4, fontFamily: 'var(--font-sans)' }}>
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
