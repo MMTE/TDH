@@ -190,7 +190,7 @@ export function Navbar({ activePath }: NavbarProps) {
               border: 'none',
               color: 'var(--color-fg)',
               cursor: 'pointer',
-              padding: 8,
+              padding: 12,
             }}
             aria-label="بستن منو"
           >

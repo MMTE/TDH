@@ -77,17 +77,17 @@ export function AboutContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
+        className="py-16 px-4 md:py-20 md:px-10"
         style={{
-          padding: '80px 40px',
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
           ...s.section,
         }}
       >
-        <span className="mono" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
+        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
           REF · 03.ABOUT
         </span>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
             § ۰۳ — درباره ما
@@ -115,13 +115,7 @@ export function AboutContent() {
             </span>{' '}
             آینده‌ی نرم‌افزار سازمانی.
           </h1>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 80,
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20">
             <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)' }}>
               تکین داده هوشمند (TDH) از سال ۱۳۹۵ با هدف ارائه راهکارهای نرم‌افزاری سازمانی
               فعالیت خود را آغاز کرده است. ما باور داریم که فناوری باید در خدمت کسب‌وکار باشد،
@@ -137,18 +131,16 @@ export function AboutContent() {
       </section>
 
       <section
+        className="py-16 px-4 md:py-28 md:px-10"
         style={{
           background: 'var(--color-bg-soft)',
-          padding: '80px 40px',
           ...s.section,
         }}
       >
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div
+            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-10"
             style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 2fr',
-              gap: 40,
               alignItems: 'baseline',
               marginBottom: 64,
             }}
@@ -168,25 +160,19 @@ export function AboutContent() {
             </h2>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-            }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {values.map((v, i) => (
               <div
                 key={v.num}
+                className="p-6 md:p-10"
                 style={{
-                  padding: '32px 24px',
                   borderLeft:
                     i < values.length - 1 ? '1px solid var(--color-line)' : 'none',
                 }}
               >
                 <span
-                  className="mono"
+                  className="mono text-4xl md:text-[56px]"
                   style={{
-                    fontSize: 56,
                     fontWeight: 900,
                     color: 'var(--color-accent)',
                     display: 'block',
@@ -216,18 +202,16 @@ export function AboutContent() {
       </section>
 
       <section
+        className="py-16 px-4 md:py-28 md:px-10"
         style={{
-          padding: '80px 40px',
           borderBottom: '1px solid var(--color-line)',
           ...s.section,
         }}
       >
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div
+            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-10"
             style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 2fr',
-              gap: 40,
               alignItems: 'baseline',
               marginBottom: 64,
             }}
@@ -251,10 +235,8 @@ export function AboutContent() {
             {timeline.map((t, i) => (
               <div
                 key={t.year}
+                className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_2fr_auto] gap-4 md:gap-12"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'auto 1fr 2fr auto',
-                  gap: '32px 48px',
                   alignItems: 'center',
                   padding: '32px 0',
                   borderBottom:
@@ -275,9 +257,8 @@ export function AboutContent() {
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
-                  className="mono"
+                  className="mono text-3xl md:text-[48px]"
                   style={{
-                    fontSize: 48,
                     fontWeight: 900,
                     color: 'var(--color-fg)',
                     lineHeight: 1,
@@ -316,18 +297,16 @@ export function AboutContent() {
       </section>
 
       <section
+        className="py-16 px-4 md:py-28 md:px-10"
         style={{
           background: 'var(--color-bg-soft)',
-          padding: '80px 40px',
           ...s.section,
         }}
       >
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div
+            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-10"
             style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 2fr',
-              gap: 40,
               alignItems: 'baseline',
               marginBottom: 64,
             }}
@@ -347,13 +326,7 @@ export function AboutContent() {
             </h2>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: 32,
-            }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {team.map((m) => (
               <div key={m.name}>
                 <PhotoPlaceholder label={m.name} aspect="3/4" />

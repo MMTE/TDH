@@ -8,8 +8,8 @@ const reasons = [
 
 export function WhyTDHSection() {
   return (
-    <section style={{ padding: '120px 40px', borderBottom: '1px solid var(--color-line)' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+    <section className="py-16 px-4 md:py-28 md:px-10" style={{ borderBottom: '1px solid var(--color-line)' }}>
+      <div className="max-w-[1400px] mx-auto">
         <div style={{ marginBottom: 64 }}>
           <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em', display: 'block', marginBottom: 16 }}>
             § ۰۴ — چرا TDH
@@ -19,12 +19,13 @@ export function WhyTDHSection() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', borderTop: '1px solid var(--color-line)' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ borderTop: '1px solid var(--color-line)' }}>
           {reasons.map((reason, i) => (
             <div
               key={reason.number}
+              className="py-6 md:py-8"
               style={{
-                padding: '40px 32px',
+                paddingInline: 32,
                 borderBlockStart: i >= 2 ? '1px solid var(--color-line)' : 'none',
                 borderInlineStart: i % 2 !== 0 ? '1px solid var(--color-line)' : 'none',
               }}
@@ -41,12 +42,11 @@ export function WhyTDHSection() {
             </div>
           ))}
           <div
+            className="flex items-center py-6 md:py-8"
             style={{
-              padding: '40px 32px',
+              paddingInline: 32,
               borderBlockStart: '1px solid var(--color-line)',
               borderInlineStart: 'none',
-              display: 'flex',
-              alignItems: 'center',
             }}
           >
             <a

@@ -45,17 +45,17 @@ export function ProductsContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
+        className="py-16 px-4 md:py-20 md:px-10"
         style={{
-          padding: '80px 40px 80px',
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
           ...s.section,
         }}
       >
-        <span className="mono" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
+        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
           REF · 01.PRODUCTS
         </span>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
             § ۰۱ — کاتالوگ محصولات
@@ -97,8 +97,8 @@ export function ProductsContent() {
         </div>
       </section>
 
-      <section style={{ padding: '80px 40px 120px', ...s.section }}>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+      <section className="py-16 px-4 md:py-20 md:px-10 md:pb-28" style={{ ...s.section }}>
+        <div className="max-w-[1400px] mx-auto">
           {products.map((product, index) => {
             const isEven = index % 2 === 0;
             const variant = slugToVariant[product.slug] || 'suite';
@@ -107,20 +107,16 @@ export function ProductsContent() {
               <a
                 key={product.slug}
                 href={`/products/${product.slug}`}
+                className="block mb-12 md:mb-20"
                 style={{
                   textDecoration: 'none',
                   color: 'inherit',
-                  display: 'block',
-                  marginBottom: 80,
                 }}
               >
                 <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: isEven ? '1.4fr 1fr' : '1fr 1.4fr',
-                    gap: 48,
-                    alignItems: 'center',
-                  }}
+                  className={`grid grid-cols-1 gap-8 md:gap-12 items-center ${
+                    isEven ? 'md:grid-cols-[1.4fr_1fr]' : 'md:grid-cols-[1fr_1.4fr]'
+                  }`}
                 >
                   {isEven ? (
                     <>

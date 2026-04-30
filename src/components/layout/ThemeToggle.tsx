@@ -26,8 +26,8 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label="تغییر تم"
       style={{
-        width: 36,
-        height: 36,
+        width: 44,
+        height: 44,
         border: '1px solid var(--color-line-strong)',
         background: 'transparent',
         color: 'var(--color-fg)',

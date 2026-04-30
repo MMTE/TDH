@@ -6,9 +6,9 @@ const pillars = [
 
 export function PillarsSection() {
   return (
-    <section style={{ padding: '120px 40px', borderBottom: '1px solid var(--color-line)' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'end', marginBottom: 64 }}>
+    <section className="py-16 px-4 md:py-28 md:px-10" style={{ borderBottom: '1px solid var(--color-line)' }}>
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-10 items-end mb-12 md:mb-16">
           <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em' }}>
             § ۰۲ — ستون‌های ما
           </span>
@@ -17,16 +17,16 @@ export function PillarsSection() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid var(--color-line)' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '1px solid var(--color-line)' }}>
           {pillars.map((pillar, i) => (
             <div
               key={pillar.number}
+              className="p-6 md:p-8"
               style={{
-                padding: '48px 32px',
                 borderInlineStart: i > 0 ? '1px solid var(--color-line)' : 'none',
               }}
             >
-              <div className="mono" style={{ fontSize: 64, fontWeight: 900, color: 'var(--color-accent)', lineHeight: 1 }}>
+              <div className="mono text-5xl md:text-[64px]" style={{ fontWeight: 900, color: 'var(--color-accent)', lineHeight: 1 }}>
                 {pillar.number}
               </div>
               <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', display: 'block', marginTop: 16, marginBottom: 16 }}>

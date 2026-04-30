@@ -93,8 +93,8 @@ export function SolutionsContent() {
               </p>
             </div>
             <span
-              className="mono"
-              style={{ fontSize: 14, color: 'var(--color-fg-subtle)', direction: 'ltr', whiteSpace: 'nowrap' }}
+              className="mono hidden sm:block"
+              style={{ fontSize: 14, color: 'var(--color-fg-subtle)', direction: 'ltr' }}
             >
               0{i + 1} / 05
             </span>

@@ -8,8 +8,7 @@ export function Footer() {
       }}
     >
       <div
-        className="mx-auto"
-        style={{ maxWidth: 1400, padding: '80px 40px 32px' }}
+        className="mx-auto max-w-[1400px] pt-12 md:pt-20 px-4 md:px-10 pb-6 md:pb-8"
       >
         <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr_1.4fr]">
           <div>

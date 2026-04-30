@@ -12,9 +12,9 @@ export function FeaturedProducts() {
   const others = products.filter((p) => p.slug !== 'business-suite');
 
   return (
-    <section style={{ padding: '120px 40px', background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-line)' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'end', marginBottom: 64 }}>
+    <section className="py-16 px-4 md:py-28 md:px-10" style={{ background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-line)' }}>
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-end mb-12 md:mb-16">
           <div>
             <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em', display: 'block', marginBottom: 16 }}>
               § ۰۳ — محصولات
@@ -45,7 +45,7 @@ export function FeaturedProducts() {
             marginBottom: 24,
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 0 }}>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr]">
             <div style={{ padding: '40px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', letterSpacing: '0.06em', marginBottom: 16 }}>
                 FEATURED · {featured.slug.toUpperCase().replace('-', ' ')}
@@ -75,7 +75,7 @@ export function FeaturedProducts() {
           </div>
         </a>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {others.map((product) => (
             <a
               key={product.slug}

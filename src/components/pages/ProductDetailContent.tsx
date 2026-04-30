@@ -47,12 +47,10 @@ const s = {
   sectionHeader: {
     maxWidth: 1440,
     margin: '0 auto',
-    padding: '60px 40px 40px',
   },
   sectionGrid: {
     maxWidth: 1440,
     margin: '0 auto',
-    padding: '0 40px 60px',
   },
 };
 
@@ -106,17 +104,17 @@ function PdHero({
 }) {
   return (
     <section
+      className="py-12 px-4 md:py-16 md:px-10 md:pb-20"
       style={{
-        padding: '60px 40px 80px',
         borderBottom: '1px solid var(--color-line)',
         position: 'relative',
         ...s.section,
       }}
     >
-      <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+      <div className="max-w-[1400px] mx-auto">
         <a
           href="/products"
-          className="mono"
+          className="mono flex flex-wrap gap-1"
           style={{ fontSize: 13, color: 'var(--color-fg-muted)', textDecoration: 'none' }}
         >
           خانه / محصولات / {prod.name}
@@ -204,10 +202,8 @@ function PdHero({
         </div>
 
         <div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 24,
             borderTop: '1px solid var(--color-line)',
             paddingTop: 24,
             marginBottom: 48,
@@ -284,7 +280,7 @@ function PdHero({
 function PdProblems({ product: prod }: { product: Product }) {
   return (
     <section style={{ background: 'var(--color-bg-soft)', ...s.section }}>
-      <div style={s.sectionHeader}>
+      <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
         <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
           REF · PROBLEMS
         </span>
@@ -299,7 +295,7 @@ function PdProblems({ product: prod }: { product: Product }) {
           مشکلاتی که حل می‌کنیم
         </h2>
       </div>
-      <div style={{ ...s.sectionGrid, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 md:grid-cols-3 gap-6" style={s.sectionGrid}>
         {prod.problemsSolved.map((problem, i) => (
           <div
             key={i}
@@ -327,7 +323,7 @@ function PdProblems({ product: prod }: { product: Product }) {
 function PdFeatures({ product: prod, total }: { product: Product; total: number }) {
   return (
     <section style={{ ...s.section }}>
-      <div style={s.sectionHeader}>
+      <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
         <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
           REF · FEATURES
         </span>
@@ -342,7 +338,7 @@ function PdFeatures({ product: prod, total }: { product: Product; total: number 
           ویژگی‌ها و قابلیت‌ها
         </h2>
       </div>
-      <div style={{ ...s.sectionGrid, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" style={s.sectionGrid}>
         {prod.features.map((feature, i) => (
           <div
             key={i}
@@ -370,7 +366,7 @@ function PdProcess({ product: prod }: { product: Product }) {
   const steps = prod.process || [];
   return (
     <section style={{ background: 'var(--color-bg-soft)', ...s.section }}>
-      <div style={s.sectionHeader}>
+      <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
         <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
           REF · PROCESS
         </span>
@@ -385,25 +381,18 @@ function PdProcess({ product: prod }: { product: Product }) {
           فرآیند پیاده‌سازی
         </h2>
       </div>
-      <div style={{ ...s.sectionGrid }}>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16" style={s.sectionGrid}>
         <div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-0"
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 0,
             position: 'relative',
-            overflowX: 'auto',
-            paddingBottom: 16,
           }}
         >
           {steps.map((step, i) => (
             <div
               key={i}
+              className="flex flex-col items-center text-center"
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                minWidth: 120,
                 position: 'relative',
                 zIndex: 1,
               }}
@@ -427,11 +416,12 @@ function PdProcess({ product: prod }: { product: Product }) {
               >
                 {i + 1}
               </div>
-              <span style={{ fontSize: 13, color: 'var(--color-fg-muted)', textAlign: 'center', lineHeight: 1.5 }}>
+              <span style={{ fontSize: 13, color: 'var(--color-fg-muted)', lineHeight: 1.5 }}>
                 {step}
               </span>
               {i < steps.length - 1 && (
                 <div
+                  className="hidden md:block"
                   style={{
                     position: 'absolute',
                     top: 22,
@@ -455,7 +445,7 @@ function PdTech({ product: prod }: { product: Product }) {
   const techs = prod.technologies || [];
   return (
     <section style={{ ...s.section }}>
-      <div style={s.sectionHeader}>
+      <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
         <span className="mono" style={{ ...s.mono, display: 'block', marginBottom: 16 }}>
           REF · TECH
         </span>
@@ -470,7 +460,7 @@ function PdTech({ product: prod }: { product: Product }) {
           تکنولوژی‌ها
         </h2>
       </div>
-      <div style={{ ...s.sectionGrid, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 flex flex-wrap gap-3" style={s.sectionGrid}>
         {techs.map((tech, i) => (
           <span
             key={i}
@@ -501,8 +491,8 @@ function PdRelated({ relatedProducts }: { relatedProducts: Product[] }) {
         ...s.section,
       }}
     >
-      <div style={s.sectionHeader}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+      <div className="max-w-[1400px] mx-auto py-16 px-4 md:py-24 md:px-10" style={s.sectionHeader}>
+        <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-baseline" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
           <h2
             style={{
               fontSize: 'clamp(28px, 4vw, 56px)',
@@ -522,7 +512,7 @@ function PdRelated({ relatedProducts }: { relatedProducts: Product[] }) {
           </a>
         </div>
       </div>
-      <div style={{ ...s.sectionGrid, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32 }}>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 md:grid-cols-2 gap-6" style={s.sectionGrid}>
         {relatedProducts.map((rp) => {
           const v = slugToVariant[rp.slug] || 'suite';
           return (

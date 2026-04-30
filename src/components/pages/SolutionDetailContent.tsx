@@ -124,7 +124,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
               ویژگی‌ها و قابلیت‌ها
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {sol.features.map((feature, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'start' }}>
                   <span

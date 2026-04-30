@@ -15,6 +15,7 @@ export function CTABlock({
 
   return (
     <section
+      className="py-16 px-4 md:py-28 md:px-10"
       style={{
         position: 'relative',
         background: 'var(--color-accent)',
@@ -23,16 +24,14 @@ export function CTABlock({
       }}
     >
       <div
+        className="max-w-[1400px] mx-auto"
         style={{
-          maxWidth: 1440,
-          margin: '0 auto',
-          padding: '80px 24px',
           position: 'relative',
         }}
       >
         {/* Mono refs - positioned absolutely */}
         <span
-          className="mono"
+          className="mono hidden sm:block"
           style={{
             position: 'absolute',
             top: '24px',
@@ -45,7 +44,7 @@ export function CTABlock({
           CTA-001
         </span>
         <span
-          className="mono"
+          className="mono hidden sm:block"
           style={{
             position: 'absolute',
             bottom: '24px',
@@ -62,7 +61,7 @@ export function CTABlock({
         <div style={{ maxWidth: 800 }}>
           <h2
             style={{
-              fontSize: 'clamp(40px, 7vw, 112px)',
+              fontSize: 'clamp(28px, 7vw, 112px)',
               fontWeight: 900,
               lineHeight: 0.98,
               letterSpacing: '-0.025em',

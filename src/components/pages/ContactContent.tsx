@@ -80,17 +80,17 @@ export function ContactContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
+        className="py-16 px-4 md:py-20 md:px-10"
         style={{
-          padding: '80px 40px',
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
           ...s.section,
         }}
       >
-        <span className="mono" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
+        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
           REF · 04.CONTACT
         </span>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
             § ۰۴ — تماس
@@ -120,20 +120,17 @@ export function ContactContent() {
         </div>
       </section>
 
-      <section style={{ padding: '80px 40px 120px', ...s.section }}>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1.4fr 1fr',
-              gap: 64,
-            }}
-          >
+      <section
+        className="py-16 px-4 md:py-20 md:pb-28 md:px-10"
+        style={{ ...s.section }}
+      >
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-16">
             <div
+              className="p-6 md:p-12"
               style={{
                 background: 'var(--color-bg-card)',
                 border: '1px solid var(--color-line)',
-                padding: '48px 40px',
               }}
             >
               <span
@@ -158,7 +155,7 @@ export function ContactContent() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px 32px', marginBottom: 32 }}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: 32 }}>
                     <div>
                       <label style={labelStyle}>نام و نام خانوادگی *</label>
                       <input
@@ -202,7 +199,7 @@ export function ContactContent() {
 
                   <div style={{ marginBottom: 32 }}>
                     <label style={labelStyle}>محصول مورد نظر</label>
-                    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 4 }}>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2" style={{ marginTop: 4 }}>
                       {productOptions.map((p) => (
                         <button
                           type="button"

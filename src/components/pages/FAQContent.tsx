@@ -100,17 +100,17 @@ export function FAQContent() {
   return (
     <div style={{ fontFamily: 'var(--font-sans)' }}>
       <section
+        className="py-16 px-4 md:py-20 md:px-10"
         style={{
-          padding: '80px 40px',
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
           ...s.section,
         }}
       >
-        <span className="mono" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
+        <span className="mono hidden md:block" style={{ position: 'absolute', top: 24, left: 40, ...s.mono }}>
           REF · 05.FAQ
         </span>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+        <div className="max-w-[1400px] mx-auto">
           <div style={{ ...s.chip, marginBottom: 32 }}>
             <span style={s.dot} />
             § ۰۵ — سوالات متداول
@@ -133,8 +133,11 @@ export function FAQContent() {
         </div>
       </section>
 
-      <section style={{ padding: '80px 40px 120px', ...s.section }}>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+      <section
+        className="py-16 px-4 md:py-20 md:pb-28 md:px-10"
+        style={{ ...s.section }}
+      >
+        <div className="max-w-[1400px] mx-auto">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 64 }}>
             {faqCategories.map((cat) => (
               <div key={cat.name}>
@@ -165,11 +168,11 @@ export function FAQContent() {
                     >
                       <Accordion.Header>
                         <Accordion.Trigger
+                          className="gap-3 md:gap-5"
                           style={{
                             width: '100%',
                             display: 'flex',
                             alignItems: 'center',
-                            gap: 20,
                             padding: '20px 0',
                             background: 'none',
                             border: 'none',
