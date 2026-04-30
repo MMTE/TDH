@@ -37,7 +37,7 @@ const structuredDataArray = structuredData
 ---
 
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-tdh-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -73,7 +73,7 @@ const structuredDataArray = structuredData
     <meta name="twitter:creator" content="@TDH" />
 
     <!-- Additional SEO -->
-    <meta name="theme-color" content="#0052CC" />
+    <meta name="theme-color" content="#1c1a17" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
@@ -89,9 +89,16 @@ const structuredDataArray = structuredData
 
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
+
+    <script is:inline>
+    (function(){
+      var t = localStorage.getItem('tdh-theme') || 'dark';
+      document.documentElement.dataset.tdhTheme = t;
+    })();
+    </script>
   </head>
   <body>
-    <div class="min-h-screen flex flex-col" dir="rtl">
+    <div class="bg-bg text-fg min-h-screen flex flex-col" dir="rtl">
       <Navbar client:load />
       <div class="flex-1">
         <slot />
