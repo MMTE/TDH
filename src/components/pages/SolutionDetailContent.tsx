@@ -1,18 +1,13 @@
-import React from 'react';
-import { ArrowLeft, CheckCircle2, Cloud, Code2, GitBranch, Plug, MessageSquare } from 'lucide-react';
 import type { Solution } from '@/lib/solutions';
-import { Button } from '@/components/ui/button';
-import { getSolutionBySlug } from '@/lib/solutions';
-import { ServiceCard } from '@/components/ui/ServiceCard';
-import { PageLayout } from '@/components/layout/PageLayout';
+import { PhotoPlaceholder } from '@/components/shared/PhotoPlaceholder';
+import { CTABlock } from '@/components/shared/CTABlock';
 
-// Icon map for client-side rendering
-const iconMap: Record<string, React.ComponentType<any>> = {
-  'cloud-infrastructure-hosting': Cloud,
-  'custom-software-development': Code2,
-  'devops-cicd': GitBranch,
-  'api-development-integration': Plug,
-  'technical-consulting': MessageSquare,
+const solutionMeta: Record<string, { num: string; accent: string; tag: string }> = {
+  'cloud-infrastructure-hosting': { num: '01', accent: 'و هاستینگ', tag: 'CLOUD' },
+  'custom-software-development': { num: '02', accent: 'سفارشی', tag: 'SOFTWARE' },
+  'devops-cicd': { num: '03', accent: 'و CI/CD', tag: 'DEVOPS' },
+  'api-development-integration': { num: '04', accent: 'و یکپارچه‌سازی', tag: 'API' },
+  'technical-consulting': { num: '05', accent: 'فنی', tag: 'CONSULTING' },
 };
 
 interface SolutionDetailContentProps {
@@ -20,139 +15,99 @@ interface SolutionDetailContentProps {
 }
 
 export function SolutionDetailContent({ solution: sol }: SolutionDetailContentProps) {
-  // Get icon from map using slug (for client-side rendering)
-  const Icon = iconMap[sol.slug] || sol.icon;
+  const meta = solutionMeta[sol.slug] || { num: '01', accent: '', tag: 'SOLUTION' };
 
-  // Get related solutions
-  const relatedSolutions = sol.relatedSolutions
-    ?.map((slug) => getSolutionBySlug(slug))
-    .filter((s): s is Solution => s !== undefined) || [];
+  const accentIndex = sol.title.indexOf(meta.accent);
+  let titleBefore = sol.title;
+  let accentWord = meta.accent;
+  let titleAfter = '';
+  if (accentIndex >= 0) {
+    titleBefore = sol.title.slice(0, accentIndex);
+    titleAfter = sol.title.slice(accentIndex + accentWord.length);
+  }
 
   return (
-    <PageLayout>
-      {/* Hero Section */}
-      <section className="container px-6 mb-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            {/* Icon */}
-            <div className="flex-shrink-0">
-              <div className="w-20 h-20 bg-accent/10 rounded-sm flex items-center justify-center">
-                {Icon && (
-                  <Icon
-                    size={48}
-                    strokeWidth={1.5}
-                    className="text-accent"
-                  />
-                )}
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="flex-1">
-              <h1 className="text-2xl sm:text-3xl md:text-h1 lg:text-hero font-heading font-bold text-foreground mb-4">
-                {sol.title}
+    <main>
+      <section
+        style={{
+          padding: '80px 40px',
+          borderBottom: '1px solid var(--color-line)',
+          position: 'relative',
+        }}
+      >
+        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+          <span style={{ fontSize: 14, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 24 }}>
+            خانه / <a href="/solutions" style={{ color: 'var(--color-fg-subtle)', textDecoration: 'none' }}>راهکارها</a> / {sol.title}
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
+            <span style={{ width: 8, height: 8, background: 'var(--color-accent)', display: 'inline-block' }} />
+            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
+              SOL·{meta.num} · {meta.tag}
+            </span>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: 80, alignItems: 'start' }}>
+            <div>
+              <h1 style={{ fontSize: 'clamp(36px, 5vw, 80px)', fontWeight: 900, lineHeight: 0.98, letterSpacing: '-0.02em', marginBottom: 24 }}>
+                {titleBefore}
+                <span style={{ textDecoration: 'underline', textUnderlineOffset: '0.08em', textDecorationThickness: '0.04em', textDecorationColor: 'var(--color-accent)' }}>
+                  {accentWord}
+                </span>
+                {titleAfter}
               </h1>
-              <p className="text-lg sm:text-xl text-accent font-medium mb-6">
-                {sol.tagline}
-              </p>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
+              <p style={{ fontSize: 18, lineHeight: 1.8, color: 'var(--color-fg-muted)', marginBottom: 40, maxWidth: 600 }}>
                 {sol.fullText}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild variant="hero" size="lg">
-                  <a href="/contact">
-                    درخواست مشاوره رایگان
-                    <ArrowLeft size={20} strokeWidth={1.5} className="mr-2" />
-                  </a>
-                </Button>
-                {sol.pricing && (
-                  <Button asChild variant="outline" size="lg">
-                    <a href="/contact">
-                      مشاهده قیمت‌ها
-                      <ArrowLeft size={20} strokeWidth={1.5} className="mr-2" />
-                    </a>
-                  </Button>
-                )}
-              </div>
+              <a
+                href="/contact"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '14px 28px',
+                  background: 'var(--color-accent)',
+                  color: 'var(--color-bg)',
+                  borderRadius: 6,
+                  fontWeight: 700,
+                  fontSize: 15,
+                  textDecoration: 'none',
+                }}
+              >
+                درخواست مشاوره ←
+              </a>
+            </div>
+            <div>
+              <PhotoPlaceholder label="SOLUTION VISUAL" aspect="4/5" caption={sol.tagline} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problems Solved Section */}
       {sol.problemsSolved && sol.problemsSolved.length > 0 && (
-        <section className="container px-6 mb-20">
-          <div className="max-w-5xl mx-auto">
-            <div className="p-6 md:p-8 bg-muted/50 rounded-sm border-r-4 border-accent">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-foreground mb-6">
-                مشکلاتی که حل می‌کند
-              </h2>
-              <ul className="space-y-3">
-                {sol.problemsSolved.map((problem, index) => (
-                  <li key={index} className="text-base text-muted-foreground flex items-start gap-3">
-                    <span className="text-accent mt-1.5 text-xl">•</span>
-                    <span>{problem}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Key Benefits Section */}
-      {sol.keyBenefits && sol.keyBenefits.length > 0 && (
-        <section className="bg-muted border-y border-border py-20 mb-20">
-          <div className="container px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-                  مزایای کلیدی
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  ارزش واقعی که این راهکار برای کسب‌وکار شما ایجاد می‌کند
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {sol.keyBenefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="bg-card border border-border rounded-sm p-6 hover:border-accent transition-colors"
+        <section style={{ background: 'var(--color-bg-soft)', padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
+          <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+            <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
+              § ۰۱ — چالش‌ها
+            </span>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
+              مشکلاتی که حل می‌کنیم
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+              {sol.problemsSolved.map((problem, i) => (
+                <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'start' }}>
+                  <span
+                    className="mono"
+                    style={{
+                      fontSize: 14,
+                      color: 'var(--color-accent)',
+                      minWidth: 28,
+                      paddingTop: 2,
+                    }}
                   >
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="text-success mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <p className="text-foreground text-base leading-relaxed font-medium">{benefit}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Features Section */}
-      {sol.features && sol.features.length > 0 && (
-        <section className="container px-6 mb-20">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-                ویژگی‌ها و قابلیت‌ها
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                امکانات کامل این راهکار
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {sol.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-sm p-6 hover:border-accent transition-colors"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-foreground text-sm leading-relaxed">{feature}</p>
-                  </div>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--color-fg)' }}>
+                    {problem}
+                  </p>
                 </div>
               ))}
             </div>
@@ -160,60 +115,62 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         </section>
       )}
 
-      {/* Process Section */}
-      {sol.process && sol.process.length > 0 && (
-        <section className="bg-muted border-y border-border py-20 mb-20">
-          <div className="container px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-                  چگونه کار می‌کند؟
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  فرآیند کار ما از شروع تا پایان
-                </p>
-              </div>
-              <div className="space-y-6">
-                {sol.process.map((step, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-6 items-start"
+      {sol.features && sol.features.length > 0 && (
+        <section style={{ padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
+          <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+            <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
+              § ۰۲ — قابلیت‌ها
+            </span>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
+              ویژگی‌ها و قابلیت‌ها
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+              {sol.features.map((feature, i) => (
+                <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'start' }}>
+                  <span
+                    className="mono"
+                    style={{
+                      fontSize: 13,
+                      color: 'var(--color-accent)',
+                      minWidth: 24,
+                      paddingTop: 2,
+                    }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-sm flex items-center justify-center">
-                      <span className="text-accent-foreground font-heading font-bold text-lg">
-                        {index + 1}
-                      </span>
-                    </div>
-                    <div className="flex-1 bg-card border border-border rounded-sm p-6 hover:border-accent transition-colors">
-                      <p className="text-foreground text-base leading-relaxed">{step}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--color-fg)' }}>
+                    {feature}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* Use Cases Section */}
-      {sol.useCases && sol.useCases.length > 0 && (
-        <section className="container px-6 mb-20">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-                موارد استفاده
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                چه کسانی از این راهکار بهره می‌برند؟
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3">
-              {sol.useCases.map((useCase, index) => (
+      {sol.technologies && sol.technologies.length > 0 && (
+        <section style={{ padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
+          <div style={{ maxWidth: 1440, margin: '0 auto' }}>
+            <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 8 }}>
+              § ۰۳ — استک
+            </span>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, marginBottom: 48 }}>
+              تکنولوژی‌ها
+            </h2>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+              {sol.technologies.map((tech, i) => (
                 <span
-                  key={index}
-                  className="text-sm px-4 py-2 bg-accent/10 text-accent rounded-sm border border-accent/20 hover:border-accent transition-colors"
+                  key={i}
+                  className="mono"
+                  style={{
+                    padding: '8px 16px',
+                    border: '1px solid var(--color-line)',
+                    borderRadius: 6,
+                    fontSize: 13,
+                    color: 'var(--color-fg-muted)',
+                  }}
                 >
-                  {useCase}
+                  {tech}
                 </span>
               ))}
             </div>
@@ -221,95 +178,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         </section>
       )}
 
-      {/* Technologies Section */}
-      {sol.technologies && sol.technologies.length > 0 && (
-        <section className="bg-muted border-y border-border py-20 mb-20">
-          <div className="container px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-                  تکنولوژی‌ها و ابزارها
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  تکنولوژی‌های مورد استفاده در این راهکار
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-3">
-                {sol.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="text-sm px-4 py-2 bg-card border border-border text-foreground rounded-sm hover:border-accent transition-colors"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Related Solutions Section */}
-      {relatedSolutions.length > 0 && (
-        <section className="container px-6 mb-20">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-h2 font-heading font-bold text-foreground mb-4">
-                راهکارهای مرتبط
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                راهکارهای دیگری که ممکن است برای شما مفید باشند
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedSolutions.map((relatedSol) => (
-                <ServiceCard
-                  key={relatedSol.slug}
-                  icon={relatedSol.icon}
-                  title={relatedSol.title}
-                  description={relatedSol.shortText}
-                  link={`/solutions/${relatedSol.slug}`}
-                  linkText="مشاهده راهکار"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Enhanced CTA Section */}
-      <section className="container px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-card border border-border rounded-sm p-8 md:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-4">
-              آماده شروع هستید؟
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              برای دریافت مشاوره رایگان و اطلاعات بیشتر در مورد این راهکار، با ما تماس بگیرید. تیم ما آماده است تا به شما کمک کند.
-            </p>
-            {sol.pricing && (
-              <div className="mb-8">
-                <p className="text-sm text-muted-foreground mb-2">شروع از</p>
-                <p className="text-3xl font-heading font-bold text-foreground">{sol.pricing}</p>
-              </div>
-            )}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="hero" size="lg">
-                <a href="/contact">
-                  تماس با ما
-                  <ArrowLeft size={20} strokeWidth={1.5} className="mr-2" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="/contact">
-                  درخواست دمو
-                  <ArrowLeft size={20} strokeWidth={1.5} className="mr-2" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </PageLayout>
+      <CTABlock heading="بیایید درباره راهکار شما صحبت کنیم." accentWord="راهکار شما" />
+    </main>
   );
 }
