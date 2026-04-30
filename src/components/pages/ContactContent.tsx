@@ -47,11 +47,10 @@ const inputStyle: React.CSSProperties = {
 };
 
 const labelStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: 12,
-  color: 'var(--color-fg-subtle)',
-  textTransform: 'uppercase',
-  letterSpacing: '0.08em',
+  fontFamily: 'var(--font-sans)',
+  fontSize: 13,
+  fontWeight: 500,
+  color: 'var(--color-fg-muted)',
   marginBottom: 8,
   display: 'block',
 };
