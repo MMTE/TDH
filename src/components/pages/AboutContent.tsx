@@ -85,10 +85,6 @@ export function AboutContent() {
         }}
       >
         <div className="max-w-[1400px] mx-auto">
-          <div style={{ ...s.chip, marginBottom: 32 }}>
-            <span style={s.dot} />
-            ۰۳ — درباره ما
-          </div>
           <h1
             style={{
               fontSize: 'clamp(28px, 4vw, 52px)',
@@ -110,8 +106,7 @@ export function AboutContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
             <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)' }}>
               تکین داده هوشمند (TDH) از سال ۱۳۹۵ با هدف ارائه راهکارهای نرم‌افزاری سازمانی
-              فعالیت خود را آغاز کرده است. ما باور داریم که فناوری باید در خدمت کسب‌وکار باشد،
-              نه برعکس.
+              فعالیت خود را آغاز کرده است. نرم‌افزارهای سازمانی باید قدرتمند اما ساده باشند — فناوری در خدمت کسب‌وکار، نه برعکس.
             </p>
             <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)' }}>
               امروز، با بیش از ۹ سال تجربه و صدها پروژه موفق، به سازمان‌های ایرانی در مسیر
@@ -137,9 +132,6 @@ export function AboutContent() {
               marginBottom: 64,
             }}
           >
-            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              ۰۱ — اصول ما
-            </span>
             <h2
               style={{
                 fontSize: 'clamp(24px, 3vw, 40px)',
@@ -209,9 +201,6 @@ export function AboutContent() {
               marginBottom: 64,
             }}
           >
-            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              ۰۲ — مسیر ما
-            </span>
             <h2
               style={{
                 fontSize: 'clamp(24px, 3vw, 40px)',
@@ -305,9 +294,6 @@ export function AboutContent() {
               marginBottom: 64,
             }}
           >
-            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-              ۰۳ — تیم
-            </span>
             <h2
               style={{
                 fontSize: 'clamp(24px, 3vw, 40px)',

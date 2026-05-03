@@ -78,17 +78,9 @@ export function Navbar({ activePath }: NavbarProps) {
                 T
               </span>
             </div>
-            <div className="flex flex-col gap-0.5">
-              <span className="text-fg font-bold text-[15px] leading-tight">
-                تکین داده هوشمند
-              </span>
-              <span
-                className="text-accent"
-                style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.05em', direction: 'ltr', display: 'inline-block' }}
-              >
-                TDH · ENTERPRISE OS
-              </span>
-            </div>
+            <span className="text-fg font-bold text-[15px] leading-tight">
+              تکین داده هوشمند
+            </span>
           </a>
 
           <div className="hidden lg:flex items-center gap-6">

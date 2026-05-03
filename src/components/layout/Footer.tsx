@@ -40,7 +40,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.7, maxWidth: 320 }}>
-              راهکارهای نرم‌افزاری سازمانی برای کسب‌وکارهای در حال رشد. فناوری · نوآوری · نرم‌افزار.
+              راهکارهای نرم‌افزاری سازمانی برای کسب‌وکارهای در حال رشد.
             </p>
           </div>
 
@@ -125,12 +125,7 @@ export function Footer() {
           <span className="text-fg-muted">
             © ۱۴۰۳ تکین داده هوشمند. تمامی حقوق محفوظ است.
           </span>
-          <span
-            className="text-accent"
-            style={{ fontFamily: 'var(--font-mono)', fontSize: 11, direction: 'ltr', display: 'inline-block' }}
-          >
-            TDH · TEHRAN, IR · 51.4°N 35.7°E
-          </span>
+
         </div>
       </div>
     </footer>

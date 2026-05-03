@@ -1,9 +1,9 @@
 const reasons = [
-  { number: '01', title: 'امنیت سازمانی', description: 'امنیت سطح بانکی در هر لایه. داده‌های شما با استانداردهای بین‌المللی محافظت می‌شوند.' },
-  { number: '02', title: 'عملکرد بالا', description: '۹۹٫۹٪ آپتایم تضمین شده. پلتفرم‌های ما برای عملکرد بهینه و در دسترس بودن دائمی طراحی شده‌اند.' },
-  { number: '03', title: 'پشتیبانی حرفه‌ای', description: 'تیم پشتیبانی ۲۴/۷ آماده کمک به شماست. بیش از ۱۰٬۰۰۰ کاربر فعال از خدمات ما استفاده می‌کنند.' },
-  { number: '04', title: 'مقیاس‌پذیری', description: 'از ۱۰ تا ۱۰٬۰۰۰ کاربر، پلتفرم‌های ما با رشد کسب‌وکار شما مقیاس می‌شوند.' },
-  { number: '05', title: 'راهکار یکپارچه', description: 'همه ابزارهای مورد نیاز در یک پلتفرم واحد. بدون نیاز به نرم‌افزارهای متعدد و پیچیده.' },
+  { number: '01', title: 'امنیت سازمانی', description: 'رمزنگاری پیشرفته، کنترل دسترسی مبتنی بر نقش و ممیزی‌های امنیتی دوره‌ای. داده‌های شما در سرورهای داخل ایران ذخیره می‌شوند.' },
+  { number: '02', title: 'عملکرد بالا', description: '۹۹٫۹٪ آپتایم تضمین‌شده با پشتیبان‌گیری خودکار روزانه. پلتفرم‌های ما برای در دسترس بودن دائمی طراحی شده‌اند.' },
+  { number: '03', title: 'پشتیبانی حرفه‌ای', description: 'تیم پشتیبانی ۲۴/۷ از طریق تلفن، ایمیل و پرتال مشتریان. پاسخگویی به مشکلات بحرانی ظرف ۴ ساعت.' },
+  { number: '04', title: 'مقیاس‌پذیری', description: 'از ۱۰ کاربر تا ۱۰٬۰۰۰ — بدون نیاز به مهاجرت یا تغییر زیرساخت. با رشد شما رشد می‌کنیم.' },
+  { number: '05', title: 'راهکار یکپارچه', description: 'ERP، CRM، BI و اتوماسیون در یک پلتفرم واحد. بدون جزیره داده و بدون نیاز به یکپارچه‌سازی پیچیده.' },
 ];
 
 export function WhyTDHSection() {
@@ -11,9 +11,6 @@ export function WhyTDHSection() {
     <section className="py-16 px-4 md:py-28 md:px-10" style={{ borderBottom: '1px solid var(--color-line)' }}>
       <div className="max-w-[1400px] mx-auto">
         <div style={{ marginBottom: 64 }}>
-          <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em', display: 'block', marginBottom: 16 }}>
-            ۰۴ — چرا TDH
-          </span>
           <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
             پنج دلیل که سازمان‌های پیشرو ما را انتخاب می‌کنند.
           </h2>

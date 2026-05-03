@@ -16,9 +16,6 @@ export function FeaturedProducts() {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-end mb-12 md:mb-16">
           <div>
-            <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em', display: 'block', marginBottom: 16 }}>
-              ۰۳ — محصولات
-            </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
               سه پلتفرم.{' '}
               <span style={{ color: 'var(--color-accent)' }}>
@@ -28,7 +25,7 @@ export function FeaturedProducts() {
             </h2>
           </div>
           <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
-            مجموعه‌ای از پلتفرم‌های یکپارچه که تمام نیازهای سازمانی شما را پوشش می‌دهد — از مدیریت ارتباط با مشتری و هوش تجاری تا اتوماسیون فرآیندها.
+            سه پلتفرم سازمانی که فرآیندهای پیچیده کسب‌وکار را ساده می‌کنند. مدیریت فروش، تحلیل داده و اتوماسیون — همه در یک زیرساخت واحد.
           </p>
         </div>
 
@@ -47,9 +44,6 @@ export function FeaturedProducts() {
         >
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr]">
             <div style={{ padding: '40px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', letterSpacing: '0.06em', marginBottom: 16 }}>
-                FEATURED · {featured.slug.toUpperCase().replace('-', ' ')}
-              </span>
               <h3 style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 8, fontFamily: 'var(--font-sans)' }}>
                 {featured.name}
               </h3>

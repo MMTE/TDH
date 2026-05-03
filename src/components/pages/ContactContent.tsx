@@ -88,10 +88,6 @@ export function ContactContent() {
         }}
       >
         <div className="max-w-[1400px] mx-auto">
-          <div style={{ ...s.chip, marginBottom: 32 }}>
-            <span style={s.dot} />
-            ۰۴ — تماس
-          </div>
           <h1
             style={{
               fontSize: 'clamp(28px, 4vw, 52px)',
@@ -125,13 +121,6 @@ export function ContactContent() {
                 border: '1px solid var(--color-line)',
               }}
             >
-              <span
-                className="mono"
-                style={{ fontSize: 12, color: 'var(--color-fg-subtle)', marginBottom: 40, display: 'block' }}
-              >
-                FORM · 001
-              </span>
-
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: '60px 0' }}>
                   <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: 24 }}>
@@ -139,7 +128,7 @@ export function ContactContent() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <h3 style={{ fontSize: 24, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 12 }}>
-                    پیام شما ارسال شد
+                    پیام شما با موفقیت ارسال شد
                   </h3>
                   <p style={{ fontSize: 16, color: 'var(--color-fg-muted)' }}>
                     تیم ما ظرف ۲۴ ساعت با شما تماس خواهد گرفت.

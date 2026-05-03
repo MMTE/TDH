@@ -53,10 +53,6 @@ export function ProductsContent() {
         }}
       >
         <div className="max-w-[1400px] mx-auto">
-          <div style={{ ...s.chip, marginBottom: 32 }}>
-            <span style={s.dot} />
-            ۰۱ — کاتالوگ محصولات
-          </div>
           <h1
             style={{
               fontSize: 'clamp(28px, 4vw, 52px)',

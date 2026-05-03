@@ -9,17 +9,6 @@ export function HeroSection() {
   return (
     <section className="relative pt-16 pb-12 px-4 md:pt-20 md:px-10 md:pb-20" style={{ borderBottom: '1px solid var(--color-line)', overflow: 'hidden' }}>
       <div className="max-w-[1400px] mx-auto">
-        <span className="mono hidden md:block" style={{ position: 'absolute', top: 40, insetInlineEnd: 40, fontSize: 12, color: 'var(--color-fg-subtle)' }}>
-          ۱۴۰۴ · TEHRAN, IR
-        </span>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 40 }}>
-          <span style={{ width: 8, height: 8, background: 'var(--color-accent)', display: 'inline-block', borderRadius: '50%' }} />
-          <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)' }}>
-            TDH·001 — پلتفرم سازمانی یکپارچه
-          </span>
-        </div>
-
         <h1 style={{ fontSize: 'clamp(32px, 5vw, 80px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
           سازمان شما،
           <br />
@@ -32,7 +21,7 @@ export function HeroSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16 items-start mb-16 md:mb-20">
           <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 520 }}>
-            TDH مجموعه‌ای یکپارچه از پلتفرم‌های سازمانی است که فرآیندهای پیچیده کسب‌وکار را ساده می‌کند. از مدیریت ارتباط با مشتری تا هوش تجاری و اتوماسیون، همه چیز در یک زیرساخت واحد با ۹۹٫۹٪ آپتایم تضمین‌شده.
+            فرآیندهای سازمانی‌تان در چند نرم‌افزار پراکنده شده. TDH همه را در یک پلتفرم واحد جمع می‌کند — از مدیریت فروش تا هوش تجاری و اتوماسیون.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <a
@@ -91,7 +80,7 @@ export function HeroSection() {
               }}
             >
               <span className="mono" style={{ fontSize: 11, color: 'var(--color-fg-subtle)', letterSpacing: '0.08em' }}>
-                0{i + 1} · {stat.key}
+                {stat.key}
               </span>
               <div style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 900, color: 'var(--color-fg)', lineHeight: 1.2, marginTop: 8, fontFamily: 'var(--font-sans)' }}>
                 {stat.number}

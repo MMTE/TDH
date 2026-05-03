@@ -120,11 +120,6 @@ function PdHero({
           خانه / محصولات / {prod.name}
         </a>
 
-        <div style={{ ...s.chip, marginTop: 24, marginBottom: 32 }}>
-          <span style={s.dot} />
-          PROD·{num} · {prod.tagline}
-        </div>
-
         <h1
           style={{
             fontSize: 'clamp(28px, 4vw, 52px)',

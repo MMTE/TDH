@@ -29,34 +29,6 @@ export function CTABlock({
           position: 'relative',
         }}
       >
-        {/* Mono refs - positioned absolutely */}
-        <span
-          className="mono hidden sm:block"
-          style={{
-            position: 'absolute',
-            top: '24px',
-            left: '24px',
-            fontSize: 12,
-            opacity: 0.4,
-            color: 'var(--color-bg)',
-          }}
-        >
-          CTA-001
-        </span>
-        <span
-          className="mono hidden sm:block"
-          style={{
-            position: 'absolute',
-            bottom: '24px',
-            right: '24px',
-            fontSize: 12,
-            opacity: 0.4,
-            color: 'var(--color-bg)',
-          }}
-        >
-          v2.0
-        </span>
-
         {/* Content */}
         <div style={{ maxWidth: 800 }}>
           <h2

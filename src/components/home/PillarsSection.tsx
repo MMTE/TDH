@@ -1,7 +1,7 @@
 const pillars = [
-  { number: '01', title: 'نرم‌افزار', description: 'پلتفرم‌های SaaS سازمانی برای مقیاس و عملیات حیاتی.' },
-  { number: '02', title: 'فناوری', description: 'زیرساخت ابری با ۹۹٫۹٪ آپتایم و امنیت سطح بانکی.' },
-  { number: '03', title: 'نوآوری', description: 'تحقیق و توسعه برای حل چالش‌های پیچیده کسب‌وکار.' },
+  { number: '01', title: 'نرم‌افزار', description: 'پلتفرم‌های SaaS سازمانی برای مقیاس و عملیات حیاتی. راهکارهای یکپارچه ERP، CRM، هوش تجاری و اتوماسیون که با رشد کسب‌وکار شما رشد می‌کنند.' },
+  { number: '02', title: 'فناوری', description: 'زیرساخت ابری مقیاس‌پذیر با ۹۹٫۹٪ آپتایم تضمین‌شده. امنیت سطح بانکی و پشتیبانی ۲۴/۷ — بدون نگرانی از سرور و نگهداری.' },
+  { number: '03', title: 'نوآوری', description: 'رویکرد مبتنی بر تحقیق و توسعه برای حل چالش‌های واقعی کسب‌وکار. تکنولوژی‌های روز دنیا، فقط وقتی ارزش واقعی ایجاد کنند.' },
 ];
 
 export function PillarsSection() {
@@ -9,9 +9,6 @@ export function PillarsSection() {
     <section className="py-16 px-4 md:py-28 md:px-10" style={{ borderBottom: '1px solid var(--color-line)' }}>
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-10 items-end mb-12 md:mb-16">
-          <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-subtle)', letterSpacing: '0.04em' }}>
-            ۰۲ — ستون‌های ما
-          </span>
           <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
             سه ستون که هر چیزی را که می‌سازیم نگه می‌دارند.
           </h2>
