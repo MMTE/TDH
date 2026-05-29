@@ -6,9 +6,9 @@ interface CTABlockProps {
 }
 
 export function CTABlock({
-  heading = 'بیایید با هم چیز بزرگی بسازیم.',
-  accentWord = 'چیز بزرگی',
-  subtext = 'ظرف ۲۴ ساعت کاری پاسخ می‌دهیم. جلسه نخست رایگان است و با تحلیل وضعیت فعلی سازمان شما همراه خواهد بود.',
+  heading = 'همین الان شروع کنیم.',
+  accentWord = 'شروع',
+  subtext = 'یه جلسه رایگان. مسأله رو می‌شنویم. بدون تعهد و بدون فشار فروش. ظرف ۲۴ ساعت جواب می‌دیم.',
   phone = '۰۲۱-۲۸۴۲۸۰۸۴',
 }: CTABlockProps) {
   const headingParts = heading.split(accentWord);
@@ -91,7 +91,7 @@ export function CTABlock({
                 fontFamily: 'var(--font-sans)',
               }}
             >
-              مشاوره رایگان
+              یه جلسه رایگان بگذاریم
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>

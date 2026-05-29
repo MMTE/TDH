@@ -97,13 +97,12 @@ export function ContactContent() {
               color: 'var(--color-fg)',
             }}
           >
-            بیایید{' '}
             <span
               style={{ color: 'var(--color-accent)' }}
             >
-              صحبت
+              حرف
             </span>{' '}
-            کنیم.
+            بزنیم.
           </h1>
         </div>
       </section>
@@ -128,10 +127,10 @@ export function ContactContent() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <h3 style={{ fontSize: 24, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 12 }}>
-                    پیام شما با موفقیت ارسال شد
+                    رسید.
                   </h3>
                   <p style={{ fontSize: 16, color: 'var(--color-fg-muted)' }}>
-                    تیم ما ظرف ۲۴ ساعت با شما تماس خواهد گرفت.
+                    ظرف ۲۴ ساعت پیداتون می‌کنیم.
                   </p>
                 </div>
               ) : (

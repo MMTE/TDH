@@ -84,7 +84,7 @@ export function ProductDetailContent({ product: prod }: ProductDetailContentProp
 
       <PdRelated relatedProducts={relatedProducts} />
 
-      <CTABlock heading="۱۴ روز رایگان دمو بگیرید." accentWord="۱۴ روز" />
+      <CTABlock heading="دمو رایگان بگیرید." accentWord="دمو" />
     </div>
   );
 }
@@ -202,12 +202,6 @@ function PdHero({
         >
           <div>
             <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 4 }}>
-              شروع از
-            </span>
-            <span style={{ fontSize: 18, fontWeight: 700, color: 'var(--color-fg)' }}>{prod.pricing}</span>
-          </div>
-          <div>
-            <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-subtle)', display: 'block', marginBottom: 4 }}>
               مراحل پیاده‌سازی
             </span>
             <span style={{ fontSize: 18, fontWeight: 700, color: 'var(--color-fg)' }}>{totalProcess} مرحله</span>
@@ -279,7 +273,7 @@ function PdProblems({ product: prod }: { product: Product }) {
             color: 'var(--color-fg)',
           }}
         >
-          مشکلاتی که حل می‌کنیم
+          مشکلاتی که خودمون داشتیم.
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 md:grid-cols-3 gap-6" style={s.sectionGrid}>
@@ -319,7 +313,7 @@ function PdFeatures({ product: prod, total }: { product: Product; total: number 
             color: 'var(--color-fg)',
           }}
         >
-          ویژگی‌ها و قابلیت‌ها
+          چی داره.
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" style={s.sectionGrid}>
@@ -360,7 +354,7 @@ function PdProcess({ product: prod }: { product: Product }) {
             color: 'var(--color-fg)',
           }}
         >
-          فرآیند پیاده‌سازی
+          چطور شروع می‌کنید.
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16" style={s.sectionGrid}>
@@ -480,14 +474,14 @@ function PdRelated({ relatedProducts }: { relatedProducts: Product[] }) {
               color: 'var(--color-fg)',
             }}
           >
-            محصولات مرتبط
+            بقیه ابزارهایی که ساختیم.
           </h2>
           <a
             href="/products"
             className="mono"
             style={{ fontSize: 14, color: 'var(--color-accent)', textDecoration: 'none' }}
           >
-            همه محصولات ←
+            همه ابزارها ←
           </a>
         </div>
       </div>
@@ -523,12 +517,6 @@ function PdRelated({ relatedProducts }: { relatedProducts: Product[] }) {
                 <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--color-fg-muted)', marginBottom: 12 }}>
                   {rp.shortDescription}
                 </p>
-                <span
-                  className="mono"
-                  style={{ fontSize: 13, color: 'var(--color-accent)' }}
-                >
-                  {rp.pricing}
-                </span>
               </div>
             </a>
           );

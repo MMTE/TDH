@@ -66,7 +66,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
                   textDecoration: 'none',
                 }}
               >
-                درخواست مشاوره ←
+                مشاوره رایگان بگیرید ←
               </a>
             </div>
             <div>
@@ -80,7 +80,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         <section style={{ background: 'var(--color-bg-soft)', padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
           <div style={{ maxWidth: 1440, margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
-              مشکلاتی که حل می‌کنیم
+              مشکلاتی که خودمون داشتیم.
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
               {sol.problemsSolved.map((problem, i) => (
@@ -110,7 +110,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         <section style={{ padding: '80px 40px', borderBottom: '1px solid var(--color-line)' }}>
           <div style={{ maxWidth: 1440, margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 44px)', fontWeight: 800, marginBottom: 48 }}>
-              ویژگی‌ها و قابلیت‌ها
+              چی داره.
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {sol.features.map((feature, i) => (
@@ -163,7 +163,7 @@ export function SolutionDetailContent({ solution: sol }: SolutionDetailContentPr
         </section>
       )}
 
-      <CTABlock heading="بیایید درباره راهکار شما صحبت کنیم." accentWord="راهکار شما" />
+      <CTABlock heading="درباره پروژه‌تون حرف بزنیم." accentWord="حرف" />
     </main>
   );
 }

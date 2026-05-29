@@ -2,31 +2,22 @@ import { products } from '@/lib/products';
 import { MockDashboard } from '@/components/shared/MockDashboard';
 
 const variantMap: Record<string, 'suite' | 'data' | 'workflow'> = {
-  'business-suite': 'suite',
-  'data-platform': 'data',
-  'workflow': 'workflow',
+  'ai-chat': 'suite',
+  'serverguard': 'data',
+  'watch-tower': 'workflow',
 };
 
 export function FeaturedProducts() {
-  const featured = products.find((p) => p.slug === 'business-suite')!;
+  const featured = products.find((p) => p.slug === 'ai-chat')!;
   const others = products.filter((p) => p.slug !== 'business-suite');
 
   return (
     <section className="py-16 px-4 md:py-24 md:px-10" style={{ background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-line)' }}>
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-end mb-12 md:mb-16">
-          <div>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
-              سه پلتفرم.{' '}
-              <span style={{ color: 'var(--color-accent)' }}>
-                یک
-              </span>{' '}
-              زیرساخت.
-            </h2>
-          </div>
-          <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--color-fg-muted)', fontFamily: 'var(--font-sans)' }}>
-            سه پلتفرم سازمانی که فرآیندهای پیچیده کسب‌وکار را ساده می‌کنند. مدیریت فروش، تحلیل داده و اتوماسیون — همه در یک زیرساخت واحد.
-          </p>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
+            بعضی از نرم‌افزارهایی که ساختیم.
+          </h2>
         </div>
 
         <a
@@ -53,9 +44,6 @@ export function FeaturedProducts() {
               <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--color-fg-muted)', marginBottom: 24, fontFamily: 'var(--font-sans)' }}>
                 {featured.shortDescription}
               </p>
-              <span className="mono" style={{ fontSize: 13, color: 'var(--color-fg-muted)', marginBottom: 24 }}>
-                {featured.pricing}
-              </span>
               <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-accent)', display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)' }}>
                 مشاهده جزئیات
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -94,9 +82,6 @@ export function FeaturedProducts() {
                 <p style={{ fontSize: 13, color: 'var(--color-accent)', marginBottom: 4, fontFamily: 'var(--font-sans)' }}>
                   {product.tagline}
                 </p>
-                <span className="mono" style={{ fontSize: 12, color: 'var(--color-fg-muted)' }}>
-                  {product.pricing}
-                </span>
               </div>
               <MockDashboard variant={variantMap[product.slug]} />
             </a>

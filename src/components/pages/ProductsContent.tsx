@@ -63,11 +63,11 @@ export function ProductsContent() {
               marginBottom: 24,
             }}
           >
-            سه پلتفرم. یک{' '}
+            سه ابزار.{' '}
             <span
               style={{ color: 'var(--color-accent)' }}
             >
-              زیرساخت یکپارچه
+              ساختیم چون لازم داشتیم
             </span>
             .
           </h1>
@@ -79,8 +79,8 @@ export function ProductsContent() {
               maxWidth: 600,
             }}
           >
-            راه‌حل‌های SaaS سازمانی TDH — از مدیریت کسب‌وکار و هوش تجاری تا اتوماسیون فرآیندها.
-            همه در یک زیرساخت یکپارچه.
+            دستیار هوشمند فارسی، مانیتورینگ سرور با AI، اعلان‌رسانی یکپارچه برای Agent‌ها.
+            هر کدوم یه مسأله واقعی رو حل می‌کنه.
           </p>
         </div>
       </section>
@@ -178,9 +178,6 @@ function MetaBlock({ product }: { product: (typeof products)[number] }) {
           paddingTop: 16,
         }}
       >
-        <span className="mono" style={{ fontSize: 14, color: 'var(--color-fg-muted)' }}>
-          {product.pricing}
-        </span>
         <span
           style={{
             display: 'inline-flex',

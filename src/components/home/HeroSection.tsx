@@ -1,29 +1,27 @@
 const stats = [
-  { key: 'UPTIME', number: '۹۹٫۹٪', label: 'آپتایم تضمین‌شده' },
+  { key: 'UPTIME', number: '۹۹٫۹٪', label: 'آپتایم' },
   { key: 'USERS', number: '+۱۰٬۰۰۰', label: 'کاربر فعال' },
-  { key: 'CLIENTS', number: '+۵۰', label: 'مشتری سازمانی' },
-  { key: 'EST. 1395', number: '۹+', label: 'سال تجربه' },
+  { key: 'CLIENTS', number: '+۱۰۰', label: 'مشتری' },
+  { key: 'SINCE 1395', number: '۹+', label: 'سال' },
 ];
 
 export function HeroSection() {
   return (
     <section className="relative pt-16 pb-12 px-4 md:pt-20 md:px-10 md:pb-20" style={{ borderBottom: '1px solid var(--color-line)', overflow: 'hidden' }}>
       <div className="max-w-[1400px] mx-auto">
-        <h1 style={{ fontSize: 'clamp(32px, 5vw, 80px)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.025em', color: 'var(--color-fg)', marginBottom: 64, fontFamily: 'var(--font-sans)' }}>
-          سازمان شما،
-          <br />
-          <span style={{ color: 'var(--color-accent)' }}>
-            به طرز هوشمندانه‌ای
-          </span>
-          <br />
-          یکپارچه.
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16 items-start mb-16 md:mb-20">
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 520 }}>
-            فرآیندهای سازمانی‌تان در چند نرم‌افزار پراکنده شده. TDH همه را در یک پلتفرم واحد جمع می‌کند — از مدیریت فروش تا هوش تجاری و اتوماسیون.
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <h1 style={{ fontSize: 'clamp(28px, 4vw, 64px)', fontWeight: 900, lineHeight: 1.2, letterSpacing: '-0.02em', color: 'var(--color-fg)', marginBottom: 24, fontFamily: 'var(--font-sans)' }}>
+            ساخت و تجاری‌سازی نرم‌افزارها
+            <br />
+            <span style={{ color: 'var(--color-accent)' }}>
+              و خدمات کاربردی
+            </span>
+            {' '}تخصص ویژه‌ی ماست.
+          </h1>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 620, margin: '0 auto 36px' }}>
+            از دستیار هوش مصنوعی فارسی با هزاران کاربر روزانه، تا مانیتورینگ سرور با AI و اعلان‌رسانی یکپارچه برای Agent های هوشمند — ابزارهایی ساختیم که خودمون بهشون نیاز داشتیم.
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={{ display: 'flex', flexDirection: 'row', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a
               href="/contact"
               style={{
@@ -69,17 +67,18 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4" style={{ borderTop: '1px solid var(--color-line)' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4" style={{ borderTop: '1px solid var(--color-line)', marginTop: 48 }}>
           {stats.map((stat, i) => (
             <div
               key={stat.key}
               style={{
                 paddingInlineStart: i > 0 ? 20 : 0,
+                paddingInlineEnd: 20,
                 paddingBlock: 24,
                 borderInlineStart: i > 0 ? '1px solid var(--color-line)' : 'none',
               }}
             >
-              <span className="mono" style={{ fontSize: 11, color: 'var(--color-fg-subtle)', letterSpacing: '0.08em' }}>
+              <span className="mono" style={{ fontSize: 11, color: 'var(--color-fg-subtle)', letterSpacing: '0.08em', direction: 'ltr', display: 'block', textAlign: 'left' }}>
                 {stat.key}
               </span>
               <div style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 900, color: 'var(--color-fg)', lineHeight: 1.2, marginTop: 8, fontFamily: 'var(--font-sans)' }}>
