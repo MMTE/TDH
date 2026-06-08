@@ -4,15 +4,15 @@ import { MockDashboard } from '@/components/shared/MockDashboard';
 import { CTABlock } from '@/components/shared/CTABlock';
 
 const slugToVariant: Record<string, 'suite' | 'data' | 'workflow'> = {
-  'business-suite': 'suite',
-  'data-platform': 'data',
-  'workflow': 'workflow',
+  'ai-chat': 'suite',
+  'serverguard': 'data',
+  'watch-tower': 'workflow',
 };
 
 const slugToNum: Record<string, string> = {
-  'business-suite': '01',
-  'data-platform': '02',
-  'workflow': '03',
+  'ai-chat': '01',
+  'serverguard': '02',
+  'watch-tower': '03',
 };
 
 const s = {
@@ -84,7 +84,7 @@ export function ProductDetailContent({ product: prod }: ProductDetailContentProp
 
       <PdRelated relatedProducts={relatedProducts} />
 
-      <CTABlock heading="دمو رایگان بگیرید." accentWord="دمو" />
+      <CTABlock heading="درباره این ابزار حرف بزنیم." accentWord="ابزار" />
     </div>
   );
 }
@@ -117,7 +117,7 @@ function PdHero({
           className="mono flex flex-wrap gap-1"
           style={{ fontSize: 13, color: 'var(--color-fg-muted)', textDecoration: 'none' }}
         >
-          خانه / محصولات / {prod.name}
+          خانه / ابزارها / {prod.name}
         </a>
 
         <h1
@@ -273,7 +273,7 @@ function PdProblems({ product: prod }: { product: Product }) {
             color: 'var(--color-fg)',
           }}
         >
-          مشکلاتی که خودمون داشتیم.
+          مسأله‌هایی که با آن روبه‌رو بودیم.
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 md:grid-cols-3 gap-6" style={s.sectionGrid}>
@@ -313,7 +313,7 @@ function PdFeatures({ product: prod, total }: { product: Product; total: number 
             color: 'var(--color-fg)',
           }}
         >
-          چی داره.
+          امکانات کاربردی
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" style={s.sectionGrid}>
@@ -354,7 +354,7 @@ function PdProcess({ product: prod }: { product: Product }) {
             color: 'var(--color-fg)',
           }}
         >
-          چطور شروع می‌کنید.
+          چطور شروع می‌کنید
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16" style={s.sectionGrid}>

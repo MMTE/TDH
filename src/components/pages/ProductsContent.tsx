@@ -2,9 +2,9 @@ import { products } from '@/lib/products';
 import { MockDashboard } from '@/components/shared/MockDashboard';
 
 const slugToVariant: Record<string, 'suite' | 'data' | 'workflow'> = {
-  'business-suite': 'suite',
-  'data-platform': 'data',
-  'workflow': 'workflow',
+  'ai-chat': 'suite',
+  'serverguard': 'data',
+  'watch-tower': 'workflow',
 };
 
 const s = {
@@ -67,7 +67,7 @@ export function ProductsContent() {
             <span
               style={{ color: 'var(--color-accent)' }}
             >
-              ساختیم چون لازم داشتیم
+              اول برای نیاز واقعی ساختیم
             </span>
             .
           </h1>
@@ -79,8 +79,8 @@ export function ProductsContent() {
               maxWidth: 600,
             }}
           >
-            دستیار هوشمند فارسی، مانیتورینگ سرور با AI، اعلان‌رسانی یکپارچه برای Agent‌ها.
-            هر کدوم یه مسأله واقعی رو حل می‌کنه.
+            دستیار هوشمند فارسی، مانیتورینگ سرور با AI، و اعلان‌رسانی یکپارچه برای Agent ها.
+            هرکدام برای حل یک مسأله واقعی ساخته شده‌اند.
           </p>
         </div>
       </section>

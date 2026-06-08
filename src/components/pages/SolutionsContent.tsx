@@ -5,11 +5,19 @@ export function SolutionsContent() {
     <main>
       <section
         style={{
-          padding: '80px 40px',
+          padding: '64px 40px 80px',
           borderBottom: '1px solid var(--color-line)',
           position: 'relative',
         }}
       >
+        <div style={{ maxWidth: 1440, margin: '0 auto 48px' }}>
+          <h1 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>
+            راهکارهایی برای ساخت، رشد و نگهداری نرم‌افزار.
+          </h1>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 680 }}>
+            از زیرساخت و DevOps تا توسعه سفارشی و API؛ اول مسأله را می‌فهمیم، بعد راه‌حلی می‌سازیم که به کار کسب‌وکار شما بیاید.
+          </p>
+        </div>
         <section style={{ borderBottom: '1px solid var(--color-line)' }}>
         {solutions.map((sol, i) => (
           <a

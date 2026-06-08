@@ -32,7 +32,7 @@ const s = {
   },
 };
 
-const productOptions = ['Business Suite', 'Data Platform', 'Workflow', 'مشاوره'];
+const productOptions = ['دستیار هوشمند فارسی', 'ServerGuard', 'Watch Tower', 'مشاوره فنی'];
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -100,9 +100,9 @@ export function ContactContent() {
             <span
               style={{ color: 'var(--color-accent)' }}
             >
-              حرف
+              گفت‌وگو
             </span>{' '}
-            بزنیم.
+            کنیم.
           </h1>
         </div>
       </section>
@@ -127,10 +127,10 @@ export function ContactContent() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                   <h3 style={{ fontSize: 24, fontWeight: 700, color: 'var(--color-fg)', marginBottom: 12 }}>
-                    رسید.
+                    پیام شما رسید.
                   </h3>
                   <p style={{ fontSize: 16, color: 'var(--color-fg-muted)' }}>
-                    ظرف ۲۴ ساعت پیداتون می‌کنیم.
+                    ظرف ۲۴ ساعت با شما تماس می‌گیریم.
                   </p>
                 </div>
               ) : (

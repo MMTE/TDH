@@ -40,7 +40,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-fg-muted" style={{ fontSize: 14, lineHeight: 1.7, maxWidth: 320 }}>
-              راهکارهای نرم‌افزاری سازمانی برای کسب‌وکارهای در حال رشد.
+              ساخت و تجاری‌سازی نرم‌افزارها و خدمات کاربردی برای کسب‌وکارهایی که به راه‌حل واقعی نیاز دارند.
             </p>
           </div>
 
@@ -52,14 +52,14 @@ export function Footer() {
               PRODUCTS
             </h4>
             <nav className="flex flex-col gap-3">
-              <a href="/products/business-suite" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
-                مجموعه کسب‌وکار
+              <a href="/products/ai-chat" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                دستیار هوشمند فارسی
               </a>
-              <a href="/products/data-platform" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
-                پلتفرم داده
+              <a href="/products/serverguard" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                ServerGuard
               </a>
-              <a href="/products/workflow" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
-                گردش‌کار
+              <a href="/products/watch-tower" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
+                Watch Tower
               </a>
             </nav>
           </div>
@@ -79,7 +79,7 @@ export function Footer() {
                 راهکارها
               </a>
               <a href="/faq" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
-                سوالات متداول
+                پرسش‌های متداول
               </a>
               <a href="/contact" className="text-fg-muted" style={{ fontSize: 14, transition: 'color 0.2s' }}>
                 تماس

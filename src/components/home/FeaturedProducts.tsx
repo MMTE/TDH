@@ -16,7 +16,7 @@ export function FeaturedProducts() {
       <div className="max-w-[1400px] mx-auto">
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)' }}>
-            بعضی از نرم‌افزارهایی که ساختیم.
+            چند ابزاری که خودمان به آن‌ها نیاز داشتیم.
           </h2>
         </div>
 

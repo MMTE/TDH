@@ -74,7 +74,7 @@ export const organizationStructuredData: OrganizationStructuredData = {
   name: 'TDH - Takin Data Hooshmand',
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
-  description: 'راهکارهای نرم‌افزاری سازمانی و پلتفرم‌های کسب‌وکار',
+  description: 'ساخت و تجاری‌سازی نرم‌افزارها و خدمات کاربردی',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'IR',
@@ -107,7 +107,7 @@ export const websiteStructuredData: WebSiteStructuredData = {
   '@type': 'WebSite',
   name: 'TDH',
   url: siteUrl,
-  description: 'راهکارهای نرم‌افزاری سازمانی و پلتفرم‌های کسب‌وکار',
+  description: 'ساخت و تجاری‌سازی نرم‌افزارها و خدمات کاربردی',
   inLanguage: 'fa-IR',
   potentialAction: {
     '@type': 'SearchAction',

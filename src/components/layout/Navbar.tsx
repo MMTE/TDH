@@ -10,7 +10,7 @@ const navLinks = [
   { href: '/products', label: 'محصولات' },
   { href: '/solutions', label: 'راهکارها' },
   { href: '/about', label: 'درباره ما' },
-  { href: '/faq', label: 'سوالات متداول' },
+  { href: '/faq', label: 'پرسش‌های متداول' },
   { href: '/contact', label: 'تماس با ما' },
 ];
 
@@ -125,7 +125,7 @@ export function Navbar({ activePath }: NavbarProps) {
                 whiteSpace: 'nowrap',
               }}
             >
-              درخواست دمو ←
+              شروع گفت‌وگو ←
             </a>
           </div>
 
@@ -225,7 +225,7 @@ export function Navbar({ activePath }: NavbarProps) {
                 textDecoration: 'none',
               }}
             >
-              درخواست دمو ←
+              شروع گفت‌وگو ←
             </a>
           </div>
         </div>
