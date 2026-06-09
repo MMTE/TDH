@@ -30,7 +30,7 @@ export function CTABlock({
         }}
       >
         {/* Content */}
-        <div style={{ maxWidth: 800 }}>
+        <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
           <h2
             style={{
               fontSize: 'clamp(24px, 5vw, 72px)',
@@ -46,9 +46,7 @@ export function CTABlock({
               i < headingParts.length - 1 ? (
                 <span key={i}>
                   {part}
-                  <span
-                    style={{}}
-                  >
+                  <span style={{}}>
                     {accentWord}
                   </span>
                 </span>
@@ -65,14 +63,14 @@ export function CTABlock({
               opacity: 0.85,
               marginBottom: 48,
               maxWidth: 520,
+              margin: '0 auto 48px',
               color: 'var(--color-bg)',
             }}
           >
             {subtext}
           </p>
 
-          {/* CTA buttons */}
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
             <a
               href="/contact"
               style={{

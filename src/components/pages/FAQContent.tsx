@@ -132,11 +132,12 @@ export function FAQContent() {
               letterSpacing: '-0.025em',
               color: 'var(--color-fg)',
               marginBottom: 24,
+              textAlign: 'right',
             }}
           >
             پرسش‌هایی که بیشتر می‌شنویم.
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--color-fg-muted)', maxWidth: 600 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--color-fg-muted)', maxWidth: 600, textAlign: 'right' }}>
             اگر پاسخ‌تان را اینجا پیدا نکردید، پیام بگذارید؛ دقیق و کوتاه جواب می‌دهیم.
           </p>
         </div>
@@ -161,6 +162,7 @@ export function FAQContent() {
                     marginBottom: 24,
                     paddingBottom: 12,
                     borderBottom: '1px solid var(--color-line)',
+                    textAlign: 'right',
                   }}
                 >
                   {cat.name}
