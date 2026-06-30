@@ -1,127 +1,54 @@
-interface CTABlockProps {
-  heading?: string;
-  accentWord?: string;
-  subtext?: string;
-  phone?: string;
-}
-
-export function CTABlock({
-  heading = 'از مسأله شروع کنیم.',
-  accentWord = 'شروع',
-  subtext = 'یک جلسه کوتاه برای شنیدن مسأله شما؛ بدون تعهد و بدون فشار فروش. ظرف ۲۴ ساعت پاسخ می‌دهیم.',
-  phone = '۰۲۱-۲۸۴۲۸۰۸۴',
-}: CTABlockProps) {
-  const headingParts = heading.split(accentWord);
-
+export function CTABlock() {
   return (
     <section
-      className="py-16 px-4 md:py-24 md:px-10"
+      className="py-20 px-4 md:py-28 md:px-10"
       style={{
-        position: 'relative',
         background: 'var(--color-accent)',
         color: 'var(--color-bg)',
-        overflow: 'hidden',
       }}
     >
-      <div
-        className="max-w-[1400px] mx-auto"
-        style={{
-          position: 'relative',
-        }}
-      >
-        {/* Content */}
-        <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
-          <h2
-            style={{
-              fontSize: 'clamp(24px, 5vw, 72px)',
-              fontWeight: 900,
-              lineHeight: 1.15,
-              letterSpacing: '-0.025em',
-              marginBottom: 24,
-              color: 'var(--color-bg)',
-              fontFamily: 'var(--font-sans)',
-            }}
-          >
-            {headingParts.map((part, i) =>
-              i < headingParts.length - 1 ? (
-                <span key={i}>
-                  {part}
-                  <span style={{}}>
-                    {accentWord}
-                  </span>
-                </span>
-              ) : (
-                <span key={i}>{part}</span>
-              )
-            )}
-          </h2>
-
-          <p
-            style={{
-              fontSize: 18,
-              lineHeight: 1.65,
-              opacity: 0.85,
-              marginBottom: 48,
-              maxWidth: 520,
-              margin: '0 auto 48px',
-              color: 'var(--color-bg)',
-            }}
-          >
-            {subtext}
-          </p>
-
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a
-              href="/contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '14px 28px',
-                background: 'var(--color-bg)',
-                color: 'var(--color-accent)',
-                borderRadius: 6,
-                fontWeight: 700,
-                fontSize: 15,
-                textDecoration: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                fontFamily: 'var(--font-sans)',
-              }}
-            >
-              یک جلسه بگذاریم
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-              </svg>
-            </a>
-            <a
-              href={`tel:${phone}`}
-              className="mono"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '14px 28px',
-                background: 'transparent',
-                color: 'var(--color-bg)',
-                borderRadius: 6,
-                fontWeight: 600,
-                fontSize: 15,
-                textDecoration: 'none',
-                border: '1px solid var(--color-bg)',
-                opacity: 0.8,
-                cursor: 'pointer',
-                fontFamily: 'var(--font-mono)',
-                direction: 'ltr',
-              }}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              {phone}
-            </a>
-          </div>
-        </div>
+      <div className="max-w-[600px] mx-auto" style={{ textAlign: 'center' }}>
+        <h2
+          style={{
+            fontSize: 'clamp(24px, 4vw, 48px)',
+            fontWeight: 800,
+            lineHeight: 1.2,
+            marginBottom: 16,
+            color: 'var(--color-bg)',
+            fontFamily: 'var(--font-sans)',
+          }}
+        >
+          از مسأله شروع کنیم.
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.65,
+            opacity: 0.85,
+            marginBottom: 32,
+            color: 'var(--color-bg)',
+          }}
+        >
+          یک جلسه کوتاه برای شنیدن مسأله شما — بدون تعهد و بدون فشار فروش.
+        </p>
+        <a
+          href="/contact"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '14px 28px',
+            background: 'var(--color-bg)',
+            color: 'var(--color-accent)',
+            borderRadius: 6,
+            fontWeight: 700,
+            fontSize: 15,
+            textDecoration: 'none',
+            fontFamily: 'var(--font-sans)',
+          }}
+        >
+          یک جلسه بگذاریم
+        </a>
       </div>
     </section>
   );

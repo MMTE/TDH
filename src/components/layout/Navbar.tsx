@@ -1,29 +1,22 @@
 import { useState, useEffect } from 'react';
-import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 interface NavbarProps {
   activePath?: string;
 }
 
 const navLinks = [
-  { href: '/', label: 'خانه' },
   { href: '/products', label: 'محصولات' },
   { href: '/solutions', label: 'راهکارها' },
   { href: '/about', label: 'درباره ما' },
-  { href: '/faq', label: 'پرسش‌های متداول' },
-  { href: '/contact', label: 'تماس با ما' },
+  { href: '/contact', label: 'تماس' },
 ];
 
 export function Navbar({ activePath }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState(activePath || '/');
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -42,24 +35,19 @@ export function Navbar({ activePath }: NavbarProps) {
           position: 'sticky',
           top: 0,
           zIndex: 10,
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          background: isScrolled
-            ? 'color-mix(in oklch, var(--color-bg) 85%, transparent)'
-            : 'color-mix(in oklch, var(--color-bg) 60%, transparent)',
+          background: 'var(--color-bg)',
           borderBottom: '1px solid var(--color-line)',
-          transition: 'background 0.3s ease',
         }}
       >
         <div
           className="mx-auto flex items-center justify-between"
-          style={{ maxWidth: 1400, padding: '20px 40px' }}
+          style={{ maxWidth: 1000, padding: '16px 24px' }}
         >
-          <a href="/" className="flex items-center gap-3" dir="rtl">
+          <a href="/" className="flex items-center gap-2" dir="rtl">
             <div
               style={{
-                width: 36,
-                height: 36,
+                width: 28,
+                height: 28,
                 background: 'var(--color-accent)',
                 display: 'grid',
                 placeItems: 'center',
@@ -70,7 +58,7 @@ export function Navbar({ activePath }: NavbarProps) {
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontWeight: 900,
-                  fontSize: 18,
+                  fontSize: 14,
                   color: 'var(--color-bg)',
                   lineHeight: 1,
                 }}
@@ -78,12 +66,12 @@ export function Navbar({ activePath }: NavbarProps) {
                 T
               </span>
             </div>
-            <span className="text-fg font-bold text-[15px] leading-tight">
-              تکین داده هوشمند
+            <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-fg)' }}>
+              TDH
             </span>
           </a>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => {
               const isActive = currentPath === link.href;
               return (
@@ -94,9 +82,8 @@ export function Navbar({ activePath }: NavbarProps) {
                     fontSize: 14,
                     fontWeight: isActive ? 600 : 400,
                     color: isActive ? 'var(--color-fg)' : 'var(--color-fg-muted)',
-                    borderBottom: isActive ? '2px solid var(--color-accent)' : '2px solid transparent',
-                    paddingBottom: 4,
-                    transition: 'color 0.2s ease, border-color 0.2s ease',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) e.currentTarget.style.color = 'var(--color-fg)';
@@ -111,8 +98,7 @@ export function Navbar({ activePath }: NavbarProps) {
             })}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <ThemeToggle />
+          <div className="hidden md:flex items-center gap-4">
             <a
               href="/contact"
               style={{
@@ -120,18 +106,18 @@ export function Navbar({ activePath }: NavbarProps) {
                 color: 'var(--color-bg)',
                 fontWeight: 600,
                 fontSize: 14,
-                padding: '10px 20px',
+                padding: '8px 16px',
                 textDecoration: 'none',
-                whiteSpace: 'nowrap',
+                borderRadius: 4,
               }}
             >
-              شروع گفت‌وگو ←
+              شروع گفت‌وگو
             </a>
           </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2"
+            className="md:hidden"
             style={{
               background: 'none',
               border: 'none',
@@ -142,12 +128,12 @@ export function Navbar({ activePath }: NavbarProps) {
             aria-label="منوی موبایل"
           >
             {isOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" y1="8" x2="20" y2="8" />
                 <line x1="4" y1="16" x2="20" y2="16" />
               </svg>
@@ -168,7 +154,7 @@ export function Navbar({ activePath }: NavbarProps) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 32,
+            gap: 24,
             direction: 'rtl',
           }}
         >
@@ -176,17 +162,17 @@ export function Navbar({ activePath }: NavbarProps) {
             onClick={() => setIsOpen(false)}
             style={{
               position: 'absolute',
-              top: 20,
-              insetInlineEnd: 20,
+              top: 16,
+              insetInlineEnd: 16,
               background: 'none',
               border: 'none',
               color: 'var(--color-fg)',
               cursor: 'pointer',
-              padding: 12,
+              padding: 8,
             }}
             aria-label="بستن منو"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
@@ -200,7 +186,7 @@ export function Navbar({ activePath }: NavbarProps) {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 style={{
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: isActive ? 600 : 400,
                   color: isActive ? 'var(--color-fg)' : 'var(--color-fg-muted)',
                   textDecoration: 'none',
@@ -211,23 +197,22 @@ export function Navbar({ activePath }: NavbarProps) {
             );
           })}
 
-          <div className="flex items-center gap-4 mt-4">
-            <ThemeToggle />
-            <a
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              style={{
-                background: 'var(--color-accent)',
-                color: 'var(--color-bg)',
-                fontWeight: 600,
-                fontSize: 16,
-                padding: '12px 24px',
-                textDecoration: 'none',
-              }}
-            >
-              شروع گفت‌وگو ←
-            </a>
-          </div>
+          <a
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            style={{
+              background: 'var(--color-accent)',
+              color: 'var(--color-bg)',
+              fontWeight: 600,
+              fontSize: 14,
+              padding: '10px 20px',
+              textDecoration: 'none',
+              borderRadius: 4,
+              marginTop: 8,
+            }}
+          >
+            شروع گفت‌وگو
+          </a>
         </div>
       )}
     </>
