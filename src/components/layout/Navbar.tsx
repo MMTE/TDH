@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 interface NavbarProps {
   activePath?: string;
@@ -8,15 +9,20 @@ const navLinks = [
   { href: '/products', label: 'محصولات' },
   { href: '/solutions', label: 'راهکارها' },
   { href: '/about', label: 'درباره ما' },
+  { href: '/faq', label: 'پرسش‌های متداول' },
   { href: '/contact', label: 'تماس' },
 ];
 
 export function Navbar({ activePath }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState(activePath || '/');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -35,19 +41,24 @@ export function Navbar({ activePath }: NavbarProps) {
           position: 'sticky',
           top: 0,
           zIndex: 10,
-          background: 'var(--color-bg)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          background: isScrolled
+            ? 'color-mix(in oklch, var(--color-bg) 85%, transparent)'
+            : 'color-mix(in oklch, var(--color-bg) 60%, transparent)',
           borderBottom: '1px solid var(--color-line)',
+          transition: 'background 0.3s ease',
         }}
       >
         <div
           className="mx-auto flex items-center justify-between"
-          style={{ maxWidth: 1000, padding: '16px 24px' }}
+          style={{ maxWidth: 1200, padding: '16px 32px' }}
         >
-          <a href="/" className="flex items-center gap-2" dir="rtl">
+          <a href="/" className="flex items-center gap-3" dir="rtl">
             <div
               style={{
-                width: 28,
-                height: 28,
+                width: 32,
+                height: 32,
                 background: 'var(--color-accent)',
                 display: 'grid',
                 placeItems: 'center',
@@ -58,7 +69,7 @@ export function Navbar({ activePath }: NavbarProps) {
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontWeight: 900,
-                  fontSize: 14,
+                  fontSize: 16,
                   color: 'var(--color-bg)',
                   lineHeight: 1,
                 }}
@@ -67,7 +78,7 @@ export function Navbar({ activePath }: NavbarProps) {
               </span>
             </div>
             <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-fg)' }}>
-              TDH
+              تکین داده هوشمند
             </span>
           </a>
 
@@ -82,8 +93,9 @@ export function Navbar({ activePath }: NavbarProps) {
                     fontSize: 14,
                     fontWeight: isActive ? 600 : 400,
                     color: isActive ? 'var(--color-fg)' : 'var(--color-fg-muted)',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease',
+                    borderBottom: isActive ? '2px solid var(--color-accent)' : '2px solid transparent',
+                    paddingBottom: 4,
+                    transition: 'color 0.2s ease, border-color 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) e.currentTarget.style.color = 'var(--color-fg)';
@@ -98,7 +110,8 @@ export function Navbar({ activePath }: NavbarProps) {
             })}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <a
               href="/contact"
               style={{
@@ -197,22 +210,24 @@ export function Navbar({ activePath }: NavbarProps) {
             );
           })}
 
-          <a
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            style={{
-              background: 'var(--color-accent)',
-              color: 'var(--color-bg)',
-              fontWeight: 600,
-              fontSize: 14,
-              padding: '10px 20px',
-              textDecoration: 'none',
-              borderRadius: 4,
-              marginTop: 8,
-            }}
-          >
-            شروع گفت‌وگو
-          </a>
+          <div className="flex items-center gap-4 mt-4">
+            <ThemeToggle />
+            <a
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              style={{
+                background: 'var(--color-accent)',
+                color: 'var(--color-bg)',
+                fontWeight: 600,
+                fontSize: 14,
+                padding: '10px 20px',
+                textDecoration: 'none',
+                borderRadius: 4,
+              }}
+            >
+              شروع گفت‌وگو
+            </a>
+          </div>
         </div>
       )}
     </>

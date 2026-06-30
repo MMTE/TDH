@@ -22,6 +22,9 @@ export function ProductsContent() {
               اول برای نیاز واقعی ساختیم
             </span>.
           </h1>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--color-fg-muted)', maxWidth: 500 }}>
+            هرکدام برای حل یک مسأله واقعی ساخته شده‌اند.
+          </p>
         </div>
       </section>
 
@@ -47,6 +50,21 @@ export function ProductsContent() {
                 (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-line)';
               }}
             >
+              <span
+                className="mono"
+                style={{
+                  fontSize: 11,
+                  color: 'var(--color-fg-muted)',
+                  letterSpacing: '0.06em',
+                  display: 'inline-block',
+                  padding: '3px 10px',
+                  border: '1px solid var(--color-line)',
+                  borderRadius: 4,
+                  marginBottom: 12,
+                }}
+              >
+                {product.tagline}
+              </span>
               <h2
                 style={{
                   fontSize: 22,
