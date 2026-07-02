@@ -1,6 +1,6 @@
 const reasons = [
   { title: 'داده‌ها امن می‌مانند', description: 'حریم خصوصی کاربران برای ما اهمیت دارد.' },
-  { title: 'پایداری برای ما اصل است', description: 'ابزارها را برای استفاده روزانه ساخته‌ایم.' },
+  { title: 'پایداری برای ما اصل است', description: 'محصولات را برای استفاده روزانه و حرفه‌ای طراحی کرده‌ایم.' },
   { title: 'پشتیبانی واقعی می‌دهیم', description: 'پشت محصول می‌مانیم — تلفن، ایمیل و تیکت.' },
 ];
 
@@ -9,7 +9,7 @@ export function WhyTDHSection() {
     <section className="py-20 px-4 md:py-28 md:px-10" style={{ borderBottom: '1px solid var(--color-line)' }}>
       <div className="max-w-[800px] mx-auto" style={{ textAlign: 'center' }}>
         <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)', marginBottom: 64 }}>
-          چرا تیم‌ها TDH را انتخاب می‌کنند؟
+          چرا تیم‌ها تکین داده هوشمند را انتخاب می‌کنند؟
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {reasons.map((reason, i) => (

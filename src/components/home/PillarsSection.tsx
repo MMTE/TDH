@@ -9,7 +9,7 @@ export function PillarsSection() {
     <section className="py-20 px-4 md:py-28 md:px-10" style={{ borderBottom: '1px solid var(--color-line)' }}>
       <div className="max-w-[800px] mx-auto" style={{ textAlign: 'center' }}>
         <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 800, lineHeight: 1.2, color: 'var(--color-fg)', fontFamily: 'var(--font-sans)', marginBottom: 64 }}>
-          اینجوری <span style={{ color: 'var(--color-accent)' }}>شریک</span> تجاریتون میشیم.
+          ما خود را <span style={{ color: 'var(--color-accent)' }}>شریک تجاری</span> مشتریان می‌دانیم.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {pillars.map((pillar, i) => (

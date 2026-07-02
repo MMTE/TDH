@@ -8,7 +8,7 @@ export function HeroSection() {
           <span style={{ color: 'var(--color-accent)' }}>نرم‌افزارهای کاربردی</span>
         </h1>
         <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 520, margin: '0 auto 36px' }}>
-          ابزارهایی ساختیم که خودمون بهشون نیاز داشتیم — از دستیار هوش مصنوعی فارسی تا مانیتورینگ سرور.
+          طراحی و توسعه محصولات نرم‌افزاری شامل سیستم CRM جامع، راه‌حل‌های فروشگاهی و ابزارهای آنلاین.
         </p>
         <div style={{ display: 'flex', flexDirection: 'row', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <a
@@ -48,7 +48,7 @@ export function HeroSection() {
               fontFamily: 'var(--font-sans)',
             }}
           >
-            مشاهده ابزارها
+            مشاهده محصولات
           </a>
         </div>
       </div>

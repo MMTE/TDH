@@ -24,9 +24,8 @@ export function CTABlock() {
           style={{
             fontSize: 16,
             lineHeight: 1.65,
-            opacity: 0.85,
             marginBottom: 32,
-            color: 'var(--color-bg)',
+            color: 'var(--color-fg-subtle)',
           }}
         >
           یک جلسه کوتاه برای شنیدن مسأله شما — بدون تعهد و بدون فشار فروش.

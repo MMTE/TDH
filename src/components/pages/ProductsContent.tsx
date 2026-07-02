@@ -17,10 +17,10 @@ export function ProductsContent() {
               marginBottom: 16,
             }}
           >
-            سه ابزار.{' '}
             <span style={{ color: 'var(--color-accent)' }}>
-              اول برای نیاز واقعی ساختیم
-            </span>.
+              محصولات
+            </span>{' '}
+            نرم‌افزاری تکین داده هوشمند.
           </h1>
         </div>
       </section>

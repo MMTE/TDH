@@ -35,7 +35,7 @@ export function Footer() {
                 </span>
               </div>
               <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-fg)' }}>
-                TDH
+                تکین داده هوشمند
               </span>
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 280 }}>

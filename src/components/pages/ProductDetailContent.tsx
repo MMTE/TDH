@@ -4,15 +4,15 @@ import { MockDashboard } from '@/components/shared/MockDashboard';
 import { CTABlock } from '@/components/shared/CTABlock';
 
 const slugToVariant: Record<string, 'suite' | 'data' | 'workflow'> = {
-  'ai-chat': 'suite',
-  'serverguard': 'data',
-  'watch-tower': 'workflow',
+  'crm360': 'suite',
+  'factorino': 'data',
+  'topinar': 'workflow',
 };
 
 const slugToNum: Record<string, string> = {
-  'ai-chat': '01',
-  'serverguard': '02',
-  'watch-tower': '03',
+  'crm360': '01',
+  'factorino': '02',
+  'topinar': '03',
 };
 
 const s = {
@@ -84,7 +84,7 @@ export function ProductDetailContent({ product: prod }: ProductDetailContentProp
 
       <PdRelated relatedProducts={relatedProducts} />
 
-      <CTABlock heading="درباره این ابزار حرف بزنیم." accentWord="ابزار" />
+      <CTABlock heading="درباره این محصول حرف بزنیم." accentWord="محصول" />
     </div>
   );
 }
@@ -117,7 +117,7 @@ function PdHero({
           className="mono flex flex-wrap gap-1"
           style={{ fontSize: 13, color: 'var(--color-fg-muted)', textDecoration: 'none' }}
         >
-          خانه / ابزارها / {prod.name}
+              خانه / محصولات / {prod.name}
         </a>
 
         <h1
@@ -134,7 +134,7 @@ function PdHero({
           <span
             style={{ color: 'var(--color-accent)' }}
           >
-            TDH
+            تکین داده هوشمند
           </span>
         </h1>
 
@@ -249,7 +249,7 @@ function PdHero({
                 border: '1px solid var(--color-line)',
               }}
             >
-              app.tdh.ir/{prod.slug}
+              tdh.ir/{prod.slug}
             </span>
           </div>
           <div style={{ background: 'var(--color-bg-soft)', padding: 16 }}>
@@ -273,7 +273,7 @@ function PdProblems({ product: prod }: { product: Product }) {
             color: 'var(--color-fg)',
           }}
         >
-          مسأله‌هایی که با آن روبه‌رو بودیم.
+          چالش‌هایی که این محصول حل می‌کند.
         </h2>
       </div>
       <div className="max-w-[1400px] mx-auto px-4 md:px-10 pb-12 md:pb-16 grid grid-cols-1 md:grid-cols-3 gap-6" style={s.sectionGrid}>
@@ -474,14 +474,14 @@ function PdRelated({ relatedProducts }: { relatedProducts: Product[] }) {
               color: 'var(--color-fg)',
             }}
           >
-            بقیه ابزارهایی که ساختیم.
+            سایر محصولات.
           </h2>
           <a
             href="/products"
             className="mono"
             style={{ fontSize: 14, color: 'var(--color-accent)', textDecoration: 'none' }}
           >
-            همه ابزارها ←
+            همه محصولات ←
           </a>
         </div>
       </div>

@@ -5,8 +5,8 @@ interface Props {
 }
 
 export function PartnershipDiagram({ activeIndex, onNodeEnter, onNodeLeave }: Props) {
-  const opacity = (i: number) =>
-    activeIndex === null || activeIndex === i ? 1 : 0.25;
+  const dimColor = (color: string, i: number) =>
+    activeIndex === null || activeIndex === i ? color : 'var(--color-fg-subtle)';
 
   const outerStroke = (i: number) =>
     activeIndex === i ? '#C4894A' : 'var(--color-line-strong)';
@@ -29,8 +29,8 @@ export function PartnershipDiagram({ activeIndex, onNodeEnter, onNodeLeave }: Pr
           animation: radar-ping 2.6s ease-out infinite;
         }
         @keyframes radar-ping {
-          0%   { transform: scale(1); opacity: 0.55; }
-          100% { transform: scale(7); opacity: 0; }
+          0%   { transform: scale(1); fill-opacity: 0.55; }
+          100% { transform: scale(7); fill-opacity: 0; }
         }
         .dot-beat {
           transform-box: fill-box;
@@ -38,8 +38,8 @@ export function PartnershipDiagram({ activeIndex, onNodeEnter, onNodeLeave }: Pr
           animation: dot-beat 1.8s ease-in-out infinite 0.6s;
         }
         @keyframes dot-beat {
-          0%, 100% { transform: scale(1);   opacity: 1;   }
-          45%       { transform: scale(1.7); opacity: 0.3; }
+          0%, 100% { transform: scale(1);   }
+          45%       { transform: scale(1.7); }
         }
         .ring-l {
           animation: ring-l 3.4s ease-in-out infinite 1.2s;
@@ -59,28 +59,24 @@ export function PartnershipDiagram({ activeIndex, onNodeEnter, onNodeLeave }: Pr
 
       {/* ── Amber connectors ── */}
       <line x1="128" y1="70" x2="189" y2="70"
-        style={{ stroke: '#C4894A', strokeWidth: 1.5, strokeDasharray: '5 4',
-          opacity: activeIndex === null || activeIndex === 0 || activeIndex === 1 ? 1 : 0.25,
-          transition: 'opacity 0.2s ease' }} />
+        style={{ stroke: dimColor('#C4894A', 0), strokeWidth: 1.5, strokeDasharray: '5 4',
+          transition: 'stroke 0.2s ease' }} />
       <polyline points="185,64 191,70 185,76"
-        style={{ stroke: '#C4894A', strokeWidth: 1.5,
-          opacity: activeIndex === null || activeIndex === 0 || activeIndex === 1 ? 1 : 0.25,
-          transition: 'opacity 0.2s ease' }}
+        style={{ stroke: dimColor('#C4894A', 0), strokeWidth: 1.5,
+          transition: 'stroke 0.2s ease' }}
         strokeLinecap="round" strokeLinejoin="round" />
 
       <line x1="291" y1="70" x2="352" y2="70"
-        style={{ stroke: '#C4894A', strokeWidth: 1.5, strokeDasharray: '5 4',
-          opacity: activeIndex === null || activeIndex === 1 || activeIndex === 2 ? 1 : 0.25,
-          transition: 'opacity 0.2s ease' }} />
+        style={{ stroke: dimColor('#C4894A', 2), strokeWidth: 1.5, strokeDasharray: '5 4',
+          transition: 'stroke 0.2s ease' }} />
       <polyline points="348,64 354,70 348,76"
-        style={{ stroke: '#C4894A', strokeWidth: 1.5,
-          opacity: activeIndex === null || activeIndex === 1 || activeIndex === 2 ? 1 : 0.25,
-          transition: 'opacity 0.2s ease' }}
+        style={{ stroke: dimColor('#C4894A', 2), strokeWidth: 1.5,
+          transition: 'stroke 0.2s ease' }}
         strokeLinecap="round" strokeLinejoin="round" />
 
       {/* ════ NODE 01 — Problem identification ════ */}
       <g
-        style={{ opacity: opacity(0), transition: 'opacity 0.2s ease', cursor: 'pointer' }}
+        style={{ opacity: 1, cursor: 'pointer' }}
         onMouseEnter={() => onNodeEnter(0)}
         onMouseLeave={onNodeLeave}
       >
@@ -104,12 +100,12 @@ export function PartnershipDiagram({ activeIndex, onNodeEnter, onNodeLeave }: Pr
 
       {/* ════ NODE 02 — Build (focal / amber) ════ */}
       <g
-        style={{ opacity: opacity(1), transition: 'opacity 0.2s ease', cursor: 'pointer' }}
+        style={{ opacity: 1, cursor: 'pointer' }}
         onMouseEnter={() => onNodeEnter(1)}
         onMouseLeave={onNodeLeave}
       >
         <circle cx="240" cy="70" r="54"
-          style={{ stroke: '#C4894A', strokeWidth: 1, strokeOpacity: 0.18, fill: 'none' }} />
+          style={{ stroke: 'var(--color-line-strong)', strokeWidth: 1, fill: 'none' }} />
         <circle cx="240" cy="70" r="48"
           style={{ fill: 'var(--color-bg-card)', stroke: '#C4894A',
             strokeWidth: activeIndex === 1 ? 2 : 1.5,
@@ -128,7 +124,7 @@ export function PartnershipDiagram({ activeIndex, onNodeEnter, onNodeLeave }: Pr
 
       {/* ════ NODE 03 — Partnership ════ */}
       <g
-        style={{ opacity: opacity(2), transition: 'opacity 0.2s ease', cursor: 'pointer' }}
+        style={{ opacity: 1, cursor: 'pointer' }}
         onMouseEnter={() => onNodeEnter(2)}
         onMouseLeave={onNodeLeave}
       >
