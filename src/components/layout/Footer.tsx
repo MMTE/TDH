@@ -14,8 +14,8 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-3">
               <div
                 style={{
-                  width: 24,
-                  height: 24,
+                  width: 28,
+                  height: 28,
                   background: 'var(--color-accent)',
                   display: 'grid',
                   placeItems: 'center',
@@ -24,14 +24,16 @@ export function Footer() {
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-mono)',
+                    fontFamily: 'var(--font-sans)',
                     fontWeight: 900,
                     fontSize: 12,
                     color: 'var(--color-bg)',
                     lineHeight: 1,
+                    paddingTop: 2,
+                    letterSpacing: '-0.02em',
                   }}
                 >
-                  T
+                  TDH
                 </span>
               </div>
               <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-fg)' }}>

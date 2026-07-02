@@ -47,9 +47,13 @@ const structuredDataArray = structuredData
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
-    <meta name="author" content="TDH - Takin Data Hooshmand" />
+    <meta name="author" content="تکین داده هوشمند" />
     <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="canonical" href={fullUrl} />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="fa-IR" href={fullUrl} />
+    <link rel="alternate" hreflang="x-default" href={fullUrl} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ogType} />
@@ -91,6 +95,13 @@ const structuredDataArray = structuredData
 
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
     <script is:inline>
     (function(){

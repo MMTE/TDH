@@ -32,7 +32,7 @@ const s = {
   },
 };
 
-const productOptions = ['دستیار هوشمند فارسی', 'ServerGuard', 'Watch Tower', 'مشاوره فنی'];
+const productOptions = ['CRM360', 'Factorino', 'Topinar', 'مشاوره فنی'];
 
 const inputStyle: React.CSSProperties = {
   width: '100%',

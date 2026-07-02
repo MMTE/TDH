@@ -46,8 +46,8 @@ export function Navbar({ activePath }: NavbarProps) {
           <a href="/" className="flex items-center gap-2" dir="rtl">
             <div
               style={{
-                width: 28,
-                height: 28,
+                width: 32,
+                height: 32,
                 background: 'var(--color-accent)',
                 display: 'grid',
                 placeItems: 'center',
@@ -56,14 +56,16 @@ export function Navbar({ activePath }: NavbarProps) {
             >
               <span
                 style={{
-                  fontFamily: 'var(--font-mono)',
+                  fontFamily: 'var(--font-sans)',
                   fontWeight: 900,
                   fontSize: 14,
                   color: 'var(--color-bg)',
                   lineHeight: 1,
+                  paddingTop: 2,
+                  letterSpacing: '-0.02em',
                 }}
               >
-                T
+                TDH
               </span>
             </div>
             <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-fg)' }}>
