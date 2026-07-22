@@ -3,9 +3,7 @@ export function HeroSection() {
     <section className="relative py-24 px-4 md:py-36 md:px-10">
       <div className="max-w-[800px] mx-auto" style={{ textAlign: 'center' }}>
         <h1 style={{ fontSize: 'clamp(28px, 4vw, 56px)', fontWeight: 800, lineHeight: 1.2, letterSpacing: '-0.02em', color: 'var(--color-fg)', marginBottom: 20, fontFamily: 'var(--font-sans)' }}>
-          طراحی و توسعه
-          <br />
-          <span style={{ color: 'var(--color-accent)' }}>محصولات نرم‌افزاری</span>
+          تکین داده هوشمند
         </h1>
         <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--color-fg-muted)', maxWidth: 520, margin: '0 auto 36px' }}>
           طراحی و توسعه محصولات نرم‌افزاری شامل سیستم CRM جامع، راه‌حل‌های فروشگاهی و ابزارهای آنلاین.

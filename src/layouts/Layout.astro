@@ -27,7 +27,7 @@ const {
 
 const currentPath = Astro.url.pathname;
 const siteUrl = 'https://tdh.ir';
-const fullTitle = title.includes('TDH') ? title : `${title} | TDH`;
+const fullTitle = title.includes('تکین داده هوشمند') ? title : `${title} | تکین داده هوشمند`;
 const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
 
 const structuredDataArray = structuredData
@@ -65,7 +65,7 @@ const structuredDataArray = structuredData
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
     <meta property="og:locale" content="fa_IR" />
-    <meta property="og:site_name" content="TDH" />
+    <meta property="og:site_name" content="تکین داده هوشمند" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
